@@ -11337,30 +11337,46 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="M3-Hole">
+<library name="my_library">
 <packages>
-<package name="M0.9-HOLE">
-<pad name="P$1" x="0" y="0" drill="0.8" diameter="0.55" first="yes"/>
+<package name="FPB0505">
+<smd name="P$1" x="-1" y="0.1" dx="1.7" dy="0.3" layer="1" roundness="3" rot="R90"/>
+<smd name="P$2" x="-0.5" y="0.1" dx="1.7" dy="0.3" layer="1" roundness="3" rot="R90"/>
+<smd name="P$3" x="0" y="0.1" dx="1.7" dy="0.3" layer="1" roundness="3" rot="R90"/>
+<smd name="P$4" x="0.5" y="0.1" dx="1.7" dy="0.3" layer="1" roundness="3" rot="R90"/>
+<smd name="P$5" x="1" y="0.1" dx="1.7" dy="0.3" layer="1" roundness="3" rot="R90"/>
+<text x="-2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
-<symbol name="M0.9-HOLE">
-<circle x="0" y="0" radius="2.54" width="0.001" layer="94"/>
-<circle x="0" y="0" radius="2.286" width="0.001" layer="94"/>
-<wire x1="0" y1="1.016" x2="0" y2="-1.016" width="0.001" layer="94"/>
-<wire x1="-1.016" y1="0" x2="1.016" y2="0" width="0.001" layer="94"/>
-<pin name="PIN" x="0" y="0" length="point"/>
+<symbol name="FPC0505">
+<pin name="P$1" x="0" y="5.08" visible="pad" length="short"/>
+<pin name="P$2" x="0" y="2.54" visible="pad" length="short"/>
+<pin name="P$3" x="0" y="0" visible="pad" length="short"/>
+<pin name="P$4" x="0" y="-2.54" visible="pad" length="short"/>
+<pin name="P$5" x="0" y="-5.08" visible="pad" length="short"/>
+<wire x1="-2.54" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="7.62" x2="2.54" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-7.62" x2="-2.54" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-7.62" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
+<text x="7.62" y="10.16" size="1.778" layer="95">&gt;NAME</text>
+<text x="7.62" y="7.62" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="M0.9-HOLE">
+<deviceset name="FPC0505">
 <gates>
-<gate name="G$1" symbol="M0.9-HOLE" x="0" y="0"/>
+<gate name="G$1" symbol="FPC0505" x="0" y="2.54"/>
 </gates>
 <devices>
-<device name="0.9MM" package="M0.9-HOLE">
+<device name="0505" package="FPB0505">
 <connects>
-<connect gate="G$1" pin="PIN" pad="P$1"/>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
+<connect gate="G$1" pin="P$5" pad="P$5"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -11393,10 +11409,8 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U$22" library="microbuilder" deviceset="1.8V" device=""/>
 <part name="U$23" library="microbuilder" deviceset="VIN" device=""/>
 <part name="U$24" library="microbuilder" deviceset="1.8V" device=""/>
-<part name="U$27" library="microbuilder" deviceset="GND" device=""/>
 <part name="R3" library="microbuilder" deviceset="RESISTOR_4PACK" device="" value="10K"/>
 <part name="U$40" library="microbuilder" deviceset="FRAME_A4_ADAFRUIT" device=""/>
-<part name="U$5" library="microbuilder" deviceset="1.8V" device=""/>
 <part name="U$7" library="microbuilder" deviceset="1.8V" device=""/>
 <part name="U$29" library="microbuilder" deviceset="1.8V" device=""/>
 <part name="U$30" library="microbuilder" deviceset="1.8V" device=""/>
@@ -11405,44 +11419,33 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U$33" library="microbuilder" deviceset="VIN" device=""/>
 <part name="Q3" library="microbuilder" deviceset="MOSFET-N_DUAL" device="" value="BSS138"/>
 <part name="Q2" library="microbuilder" deviceset="MOSFET-N_DUAL" device="" value="BSS138"/>
-<part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="0.1uF"/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="0.1uF"/>
-<part name="U$1" library="M3-Hole" deviceset="M0.9-HOLE" device="0.9MM"/>
-<part name="U$3" library="M3-Hole" deviceset="M0.9-HOLE" device="0.9MM"/>
-<part name="U$9" library="M3-Hole" deviceset="M0.9-HOLE" device="0.9MM"/>
-<part name="U$10" library="M3-Hole" deviceset="M0.9-HOLE" device="0.9MM"/>
-<part name="U$2" library="microbuilder" deviceset="1.8V" device=""/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="4.7k"/>
 <part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0402" package3d_urn="urn:adsk.eagle:package:23547/3" value="4.7k"/>
-<part name="U$4" library="M3-Hole" deviceset="M0.9-HOLE" device="0.9MM"/>
-<part name="U$6" library="microbuilder" deviceset="VIN" device=""/>
+<part name="U$3" library="microbuilder" deviceset="1.8V" device=""/>
+<part name="U$4" library="microbuilder" deviceset="1.8V" device=""/>
+<part name="U$1" library="my_library" deviceset="FPC0505" device="0505"/>
+<part name="U$2" library="my_library" deviceset="FPC0505" device="0505"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<wire x1="2.54" y1="132.08" x2="68.58" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <text x="93.98" y="134.62" size="2.1844" layer="94" ratio="7">I2C Pullups &amp; Shift</text>
 <text x="193.04" y="134.62" size="2.1844" layer="94" ratio="7">STEMMA/I2C Headers</text>
-<wire x1="68.58" y1="132.08" x2="88.9" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="88.9" y1="132.08" x2="190.5" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="190.5" y1="132.08" x2="256.54" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="256.54" y1="175.26" x2="256.54" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="190.5" y1="175.26" x2="190.5" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <wire x1="88.9" y1="175.26" x2="88.9" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
-<wire x1="68.58" y1="175.26" x2="68.58" y2="132.08" width="0.1524" layer="94" style="shortdash"/>
 <text x="137.16" y="147.32" size="1.778" layer="91">G</text>
 <text x="142.24" y="139.7" size="1.778" layer="91">S</text>
 <text x="132.08" y="139.7" size="1.778" layer="91">D</text>
-<text x="7.62" y="134.62" size="2.1844" layer="94" ratio="7">Power supply</text>
 </plain>
 <instances>
 <instance part="U$40" gate="G$1" x="0" y="0" smashed="yes">
 <attribute name="DRAWING_NAME" x="171.45" y="15.24" size="2.54" layer="94" font="vector"/>
 <attribute name="LAST_DATE_TIME" x="171.45" y="10.16" size="2.286" layer="94" font="vector"/>
 <attribute name="SHEET" x="230.505" y="10.16" size="2.54" layer="94" font="vector"/>
-</instance>
-<instance part="U$27" gate="G$1" x="60.96" y="144.78" smashed="yes">
-<attribute name="VALUE" x="59.436" y="142.24" size="1.27" layer="96"/>
 </instance>
 <instance part="R3" gate="G$4" x="165.1" y="160.02" smashed="yes" rot="MR270">
 <attribute name="NAME" x="162.56" y="160.02" size="1.27" layer="95" font="vector" rot="MR270" align="center"/>
@@ -11459,9 +11462,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="R3" gate="G$3" x="121.92" y="160.02" smashed="yes" rot="R270">
 <attribute name="NAME" x="124.46" y="160.02" size="1.27" layer="95" font="vector" rot="R270" align="center"/>
 <attribute name="VALUE" x="121.92" y="160.02" size="1.016" layer="96" font="vector" ratio="15" rot="R270" align="center"/>
-</instance>
-<instance part="U$5" gate="G$1" x="60.96" y="167.64" smashed="yes">
-<attribute name="VALUE" x="59.436" y="168.656" size="1.27" layer="96"/>
 </instance>
 <instance part="U$7" gate="G$1" x="139.7" y="170.18" smashed="yes">
 <attribute name="VALUE" x="138.176" y="171.196" size="1.27" layer="96"/>
@@ -11509,20 +11509,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <instance part="U$22" gate="G$1" x="17.78" y="50.8" smashed="yes">
 <attribute name="VALUE" x="16.256" y="51.816" size="1.27" layer="96"/>
 </instance>
-<instance part="C7" gate="G$1" x="60.96" y="157.48" smashed="yes">
-<attribute name="NAME" x="62.484" y="157.861" size="1.778" layer="95"/>
-<attribute name="VALUE" x="62.484" y="152.781" size="1.778" layer="96"/>
-</instance>
 <instance part="C8" gate="G$1" x="17.78" y="22.86" smashed="yes">
 <attribute name="NAME" x="19.304" y="23.241" size="1.778" layer="95"/>
 <attribute name="VALUE" x="19.304" y="18.161" size="1.778" layer="96"/>
-</instance>
-<instance part="U$1" gate="G$1" x="213.36" y="154.94" smashed="yes"/>
-<instance part="U$3" gate="G$1" x="213.36" y="162.56" smashed="yes"/>
-<instance part="U$9" gate="G$1" x="213.36" y="167.64" smashed="yes"/>
-<instance part="U$10" gate="G$1" x="213.36" y="147.32" smashed="yes"/>
-<instance part="U$2" gate="G$1" x="223.52" y="154.94" smashed="yes" rot="R270">
-<attribute name="VALUE" x="224.536" y="156.464" size="1.27" layer="96" rot="R270"/>
 </instance>
 <instance part="R1" gate="G$1" x="78.74" y="99.06" smashed="yes" rot="R90">
 <attribute name="NAME" x="77.2414" y="95.25" size="1.778" layer="95" rot="R90"/>
@@ -11532,20 +11521,25 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="NAME" x="107.7214" y="95.25" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="112.522" y="95.25" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="U$4" gate="G$1" x="213.36" y="139.7" smashed="yes"/>
-<instance part="U$6" gate="G$1" x="223.52" y="139.7" smashed="yes" rot="R270">
-<attribute name="VALUE" x="224.536" y="141.224" size="1.27" layer="96" rot="R270"/>
+<instance part="U$3" gate="G$1" x="218.44" y="160.02" smashed="yes" rot="R270">
+<attribute name="VALUE" x="219.456" y="161.544" size="1.27" layer="96" rot="R270"/>
+</instance>
+<instance part="U$4" gate="G$1" x="254" y="160.02" smashed="yes" rot="R270">
+<attribute name="VALUE" x="255.016" y="161.544" size="1.27" layer="96" rot="R270"/>
+</instance>
+<instance part="U$1" gate="G$1" x="203.2" y="157.48" smashed="yes">
+<attribute name="NAME" x="210.82" y="167.64" size="1.778" layer="95"/>
+<attribute name="VALUE" x="210.82" y="165.1" size="1.778" layer="96"/>
+</instance>
+<instance part="U$2" gate="G$1" x="238.76" y="157.48" smashed="yes">
+<attribute name="NAME" x="246.38" y="167.64" size="1.778" layer="95"/>
+<attribute name="VALUE" x="246.38" y="165.1" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="GND" class="0">
-<segment>
-<pinref part="U$27" gate="G$1" pin="GND"/>
-<wire x1="60.96" y1="152.4" x2="60.96" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="C7" gate="G$1" pin="2"/>
-</segment>
 <segment>
 <pinref part="U$21" gate="G$1" pin="GND"/>
 <pinref part="U$11" gate="G$1" pin="GND"/>
@@ -11554,9 +11548,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="C8" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<wire x1="213.36" y1="147.32" x2="220.98" y2="147.32" width="0.1524" layer="91"/>
-<label x="220.98" y="147.32" size="1.778" layer="95" xref="yes"/>
-<pinref part="U$10" gate="G$1" pin="PIN"/>
+<wire x1="203.2" y1="152.4" x2="208.28" y2="152.4" width="0.1524" layer="91"/>
+<label x="208.28" y="152.4" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="P$5"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="152.4" x2="243.84" y2="152.4" width="0.1524" layer="91"/>
+<label x="243.84" y="152.4" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="P$5"/>
 </segment>
 </net>
 <net name="SCK/SCL_1.8V" class="0">
@@ -11602,9 +11601,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="Q3" gate="1" pin="D"/>
 </segment>
 <segment>
-<wire x1="213.36" y1="162.56" x2="220.98" y2="162.56" width="0.1524" layer="91"/>
-<label x="220.98" y="162.56" size="1.778" layer="95" xref="yes"/>
-<pinref part="U$3" gate="G$1" pin="PIN"/>
+<wire x1="203.2" y1="157.48" x2="208.28" y2="157.48" width="0.1524" layer="91"/>
+<label x="208.28" y="157.48" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="P$3"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="157.48" x2="243.84" y2="157.48" width="0.1524" layer="91"/>
+<label x="243.84" y="157.48" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="P$3"/>
 </segment>
 </net>
 <net name="SCK/SCL" class="0">
@@ -11618,17 +11622,17 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="Q3" gate="2" pin="D"/>
 </segment>
 <segment>
-<wire x1="213.36" y1="167.64" x2="220.98" y2="167.64" width="0.1524" layer="91"/>
-<label x="220.98" y="167.64" size="1.778" layer="95" xref="yes"/>
-<pinref part="U$9" gate="G$1" pin="PIN"/>
+<wire x1="203.2" y1="154.94" x2="208.28" y2="154.94" width="0.1524" layer="91"/>
+<label x="208.28" y="154.94" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="P$4"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="154.94" x2="243.84" y2="154.94" width="0.1524" layer="91"/>
+<label x="243.84" y="154.94" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="P$4"/>
 </segment>
 </net>
 <net name="1.8V" class="0">
-<segment>
-<wire x1="60.96" y1="165.1" x2="60.96" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="U$5" gate="G$1" pin="1.8V"/>
-<pinref part="C7" gate="G$1" pin="1"/>
-</segment>
 <segment>
 <wire x1="139.7" y1="147.32" x2="139.7" y2="167.64" width="0.1524" layer="91"/>
 <pinref part="U$7" gate="G$1" pin="1.8V"/>
@@ -11668,9 +11672,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <junction x="17.78" y="43.18"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="PIN"/>
-<pinref part="U$2" gate="G$1" pin="1.8V"/>
-<wire x1="213.36" y1="154.94" x2="220.98" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="1.8V"/>
+<wire x1="203.2" y1="160.02" x2="215.9" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="U$1" gate="G$1" pin="P$2"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="1.8V"/>
+<wire x1="238.76" y1="160.02" x2="251.46" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="U$2" gate="G$1" pin="P$2"/>
 </segment>
 </net>
 <net name="VIN" class="0">
@@ -11690,9 +11699,14 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="U$33" gate="G$1" pin="VIN"/>
 </segment>
 <segment>
-<pinref part="U$4" gate="G$1" pin="PIN"/>
-<wire x1="213.36" y1="139.7" x2="220.98" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="U$6" gate="G$1" pin="VIN"/>
+<wire x1="203.2" y1="162.56" x2="208.28" y2="162.56" width="0.1524" layer="91"/>
+<label x="208.28" y="162.56" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$1" gate="G$1" pin="P$1"/>
+</segment>
+<segment>
+<wire x1="238.76" y1="162.56" x2="243.84" y2="162.56" width="0.1524" layer="91"/>
+<label x="243.84" y="162.56" size="1.016" layer="95" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="P$1"/>
 </segment>
 </net>
 <net name="SDO/ADR_1.8V" class="0">
