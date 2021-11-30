@@ -11425,6 +11425,7 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <part name="U$4" library="microbuilder" deviceset="1.8V" device=""/>
 <part name="U$1" library="my_library" deviceset="FPC0505" device="0505"/>
 <part name="U$2" library="my_library" deviceset="FPC0505" device="0505"/>
+<part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11528,6 +11529,9 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <attribute name="NAME" x="246.38" y="167.64" size="1.778" layer="95"/>
 <attribute name="VALUE" x="246.38" y="165.1" size="1.778" layer="96"/>
 </instance>
+<instance part="U$3" gate="G$1" x="78.74" y="73.66" smashed="yes">
+<attribute name="VALUE" x="77.216" y="71.12" size="1.27" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11544,6 +11548,15 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <wire x1="238.76" y1="152.4" x2="243.84" y2="152.4" width="0.1524" layer="91"/>
 <label x="243.84" y="152.4" size="1.016" layer="95" xref="yes"/>
 <pinref part="U$2" gate="G$1" pin="P$5"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="GND"/>
+<wire x1="78.74" y1="86.36" x2="78.74" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="86.36" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="93.98" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="2" pin="D"/>
+<pinref part="R1" gate="G$1" pin="1"/>
+<junction x="78.74" y="86.36"/>
 </segment>
 </net>
 <net name="SCK/SCL_1.8V" class="0">
@@ -11691,14 +11704,6 @@ Source: http://www.mouser.com/ds/2/392/products_18-2245.pdf</description>
 <pinref part="U$21" gate="G$1" pin="AD0/SDO"/>
 <wire x1="60.96" y1="33.02" x2="76.2" y2="33.02" width="0.1524" layer="91"/>
 <label x="63.5" y="33.02" size="1.778" layer="95"/>
-</segment>
-</net>
-<net name="SDO/ADR" class="0">
-<segment>
-<wire x1="88.9" y1="86.36" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="93.98" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="Q2" gate="2" pin="D"/>
-<pinref part="R1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="REGOUT" class="0">
