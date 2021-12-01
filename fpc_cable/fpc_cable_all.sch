@@ -279,7 +279,7 @@ DIN A4, landscape with extra doc field</description>
 <part name="U$4" library="my_library" deviceset="FPC0705" device="05"/>
 <part name="U$5" library="my_library" deviceset="FPC0905" device="05"/>
 <part name="U$6" library="my_library" deviceset="FPC0905" device="05"/>
-<part name="U$7" library="my_library" deviceset="FPC0505" device="05"/>
+<part name="IMU6_OUT" library="my_library" deviceset="FPC0505" device="05"/>
 <part name="U$8" library="my_library" deviceset="FPC0505" device="05"/>
 <part name="U$9" library="my_library" deviceset="FPC0705" device="05"/>
 <part name="U$10" library="my_library" deviceset="FPC0705" device="05"/>
@@ -320,7 +320,7 @@ DIN A4, landscape with extra doc field</description>
 <attribute name="NAME" x="243.84" y="116.84" size="1.27" layer="95"/>
 <attribute name="VALUE" x="243.84" y="114.3" size="1.27" layer="96"/>
 </instance>
-<instance part="U$7" gate="G$1" x="81.28" y="76.2" smashed="yes">
+<instance part="IMU6_OUT" gate="G$1" x="81.28" y="76.2" smashed="yes">
 <attribute name="NAME" x="88.9" y="86.36" size="1.778" layer="95"/>
 <attribute name="VALUE" x="88.9" y="83.82" size="1.778" layer="96"/>
 </instance>
