@@ -29,13 +29,13 @@ BLECharacteristic * pTxCharacteristic;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
 uint8_t txValue[55];
-uint8_t txValue_f = 20;
-;
+uint8_t txValue_f = 0;
+int count = 0;
 
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
 
-#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA91" // UART service UUID
+#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA90" // UART service UUID
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
@@ -111,9 +111,9 @@ void loop() {
     
     
     Serial.print("send data:");
-    Serial.println(txValue_f);
-    txValue_f +=1;
-    delay(1000); // bluetooth stack will go into congestion, if too many packets are sent
+    Serial.println(count);
+    count +=1;
+    delay(5); // bluetooth stack will go into congestion, if too many packets are sent
   }
 
   // disconnecting
@@ -121,7 +121,7 @@ void loop() {
     delay(500); // give the bluetooth stack the chance to get things ready
     pServer->startAdvertising(); // restart advertising
     Serial.println("start advertising");
-    txValue_f = 3.1;
+    count = 0;
     oldDeviceConnected = deviceConnected;
   }
   // connecting
