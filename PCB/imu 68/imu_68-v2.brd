@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -1588,11 +1588,11 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 </pass>
 </autorouter>
 <elements>
-<element name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="0.1uF" x="9.86" y="1.23" smashed="yes" rot="R270">
-<attribute name="NAME" x="9.035" y="1.795" size="0.8128" layer="25" ratio="15"/>
-<attribute name="POPULARITY" value="0" x="-0.3" y="-22.9" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="SPICEPREFIX" value="C" x="-0.3" y="-22.9" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="7.955" y="1.865" size="1.27" layer="27" rot="R270"/>
+<element name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0201" package3d_urn="urn:adsk.eagle:package:23690/2" value="0.1uF" x="10.46" y="1.33" smashed="yes" rot="R270">
+<attribute name="NAME" x="8.535" y="1.695" size="0.8128" layer="25" ratio="15"/>
+<attribute name="POPULARITY" value="0" x="0.3" y="-22.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="SPICEPREFIX" value="C" x="0.3" y="-22.8" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="8.555" y="1.965" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="Q2" library="microbuilder" package="SOT363" value="BSS138" x="4" y="2.5" smashed="yes">
 <attribute name="NAME" x="3.451" y="2.127" size="0.8128" layer="25" ratio="15"/>
@@ -1643,9 +1643,9 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <vertex x="41.3" y="0"/>
 <vertex x="-11.1" y="0"/>
 </polygon>
-<wire x1="9.86" y1="0.98" x2="8.32" y2="0.98" width="0.127" layer="1"/>
-<wire x1="8.32" y1="0.98" x2="8.3" y2="1" width="0.127" layer="1"/>
-<via x="8.3" y="1" extent="1-16" drill="0.3"/>
+<wire x1="10.46" y1="1.08" x2="9.62" y2="1.08" width="0.127" layer="1"/>
+<wire x1="9.6" y1="1.1" x2="9.62" y2="1.08" width="0.127" layer="1"/>
+<via x="9.6" y="1.1" extent="1-16" drill="0.3"/>
 <wire x1="16.5" y1="1.9" x2="17" y2="1.9" width="0.127" layer="1"/>
 <wire x1="17" y1="1.9" x2="17.2" y2="1.7" width="0.127" layer="1"/>
 <wire x1="17.2" y1="1.7" x2="17.2" y2="1.1" width="0.127" layer="1"/>
@@ -1660,6 +1660,13 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="38.5" y1="3.5" x2="38" y2="4" width="0.1524" layer="16"/>
 <wire x1="38" y1="4" x2="38" y2="4.2" width="0.1524" layer="16"/>
 <via x="38" y="4.2" extent="1-16" drill="0.3"/>
+<contactref element="Q2" pad="3"/>
+<contactref element="R1" pad="1"/>
+<wire x1="4.75" y1="2.05" x2="4.75" y2="1.6" width="0.127" layer="1"/>
+<wire x1="4.5" y1="2.3" x2="4.75" y2="2.05" width="0.127" layer="1"/>
+<wire x1="-3.8" y1="1.6" x2="-3.8" y2="2.1" width="0.127" layer="1"/>
+<wire x1="-3.8" y1="2.1" x2="-3.6" y2="2.3" width="0.127" layer="1"/>
+<wire x1="-3.6" y1="2.3" x2="4.5" y2="2.3" width="0.127" layer="1"/>
 </signal>
 <signal name="SCK/SCL_1.8V">
 <contactref element="R3" pad="1"/>
@@ -1811,21 +1818,12 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="4.75" y1="3.4" x2="5.1" y2="3.4" width="0.127" layer="1"/>
 <wire x1="5.1" y1="3.4" x2="5.8" y2="2.7" width="0.127" layer="1"/>
 </signal>
-<signal name="SDO/ADR">
-<contactref element="Q2" pad="3"/>
-<contactref element="R1" pad="1"/>
-<wire x1="4.75" y1="2.05" x2="4.75" y2="1.6" width="0.127" layer="1"/>
-<wire x1="4.5" y1="2.3" x2="4.75" y2="2.05" width="0.127" layer="1"/>
-<wire x1="-3.8" y1="1.6" x2="-3.8" y2="2.1" width="0.127" layer="1"/>
-<wire x1="-3.8" y1="2.1" x2="-3.6" y2="2.3" width="0.127" layer="1"/>
-<wire x1="-3.6" y1="2.3" x2="4.5" y2="2.3" width="0.127" layer="1"/>
-</signal>
 <signal name="REGOUT">
 <contactref element="U$21" pad="10"/>
 <contactref element="C8" pad="1"/>
-<wire x1="9.86" y1="1.48" x2="9.86" y2="1.9" width="0.127" layer="1"/>
-<wire x1="9.86" y1="1.9" x2="10.26" y2="2.3" width="0.127" layer="1"/>
-<wire x1="10.26" y1="2.3" x2="13.5" y2="2.3" width="0.127" layer="1"/>
+<wire x1="10.46" y1="1.58" x2="10.74" y2="1.58" width="0.127" layer="1"/>
+<wire x1="10.74" y1="1.58" x2="11.46" y2="2.3" width="0.127" layer="1"/>
+<wire x1="11.46" y1="2.3" x2="13.5" y2="2.3" width="0.127" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

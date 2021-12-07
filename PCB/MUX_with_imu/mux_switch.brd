@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mm"/>
@@ -192,6 +192,12 @@
 <wire x1="17.78" y1="0" x2="17.78" y2="30.48" width="0" layer="20"/>
 <wire x1="17.78" y1="30.48" x2="0" y2="30.48" width="0" layer="20"/>
 <wire x1="0" y1="30.48" x2="0" y2="0" width="0" layer="20"/>
+<text x="0.36" y="6.5" size="0.6096" layer="25" ratio="18">GND</text>
+<text x="2.77" y="6.5" size="0.6096" layer="25" ratio="18">BUT</text>
+<text x="5.34" y="6.5" size="0.6096" layer="25" ratio="18">SDA</text>
+<text x="5.34" y="4" size="0.6096" layer="25" ratio="18">SCL</text>
+<text x="2.77" y="4" size="0.6096" layer="25" ratio="18">BAT</text>
+<text x="0.36" y="4" size="0.6096" layer="25" ratio="18">VIN</text>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -1812,19 +1818,19 @@ by exp-lbrs.ulp</description>
 </autorouter>
 <elements>
 <element name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="1uF" x="2.5" y="20" smashed="yes">
-<attribute name="NAME" x="2.055" y="20.755" size="0.8128" layer="25" ratio="18"/>
+<attribute name="NAME" x="4.195" y="19.675" size="0.8128" layer="25" ratio="18"/>
 <attribute name="POPULARITY" value="18" x="25.36" y="-13.02" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="25.36" y="-13.02" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="1.865" y="18.095" size="1.27" layer="27"/>
 </element>
 <element name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="2.2uF" x="2.5" y="16" smashed="yes" rot="R180">
-<attribute name="NAME" x="3.145" y="15.345" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="5.345" y="16.375" size="0.8128" layer="25" ratio="18" rot="R180"/>
 <attribute name="POPULARITY" value="18" x="-24.17" y="42.67" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="-24.17" y="42.67" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="3.135" y="17.905" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="10uF" x="2.49" y="17.22" smashed="yes">
-<attribute name="NAME" x="1.855" y="17.855" size="0.8128" layer="25" ratio="18"/>
+<attribute name="NAME" x="4.225" y="16.845" size="0.8128" layer="25" ratio="18"/>
 <attribute name="POPULARITY" value="18" x="20.27" y="-15.8" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="20.27" y="-15.8" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="1.855" y="15.315" size="1.27" layer="27"/>
@@ -1836,7 +1842,7 @@ by exp-lbrs.ulp</description>
 <attribute name="VALUE" x="9.065" y="20.095" size="1.27" layer="27"/>
 </element>
 <element name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF" x="2.5" y="14" smashed="yes" rot="R180">
-<attribute name="NAME" x="3.035" y="13.055" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="5.295" y="14.395" size="0.8128" layer="25" ratio="18" rot="R180"/>
 <attribute name="POPULARITY" value="18" x="-36.87" y="40.67" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="-36.87" y="40.67" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="VALUE" x="3.135" y="15.905" size="1.27" layer="27" rot="R180"/>
@@ -1852,19 +1858,19 @@ by exp-lbrs.ulp</description>
 <attribute name="VALUE" x="14.349" y="19.508" size="0.4064" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="Q3" library="microbuilder" package="SOT363" value="BSS138" x="15.3" y="23" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.769" y="21.723" size="0.8128" layer="25" ratio="18" rot="R180"/>
+<attribute name="NAME" x="15.959" y="21.723" size="0.8128" layer="25" ratio="18" rot="R180"/>
 <attribute name="VALUE" x="13.649" y="23.508" size="0.4064" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="R2" library="microbuilder" package="RESPACK_4X0603" value="4.7K" x="11.2" y="27.6" smashed="yes">
-<attribute name="NAME" x="10.6" y="25.2" size="0.8128" layer="25" ratio="18"/>
+<attribute name="NAME" x="11.44" y="25.26" size="0.8128" layer="25" ratio="18"/>
 <attribute name="VALUE" x="9.6" y="25.2" size="0.8128" layer="27" font="vector" ratio="10"/>
 </element>
 <element name="R3" library="microbuilder" package="RESPACK_4X0603" value="10K" x="6.7" y="27.6" smashed="yes" rot="R180">
-<attribute name="NAME" x="6.5" y="25.2" size="0.8128" layer="25" ratio="18"/>
+<attribute name="NAME" x="6.67" y="25.25" size="0.8128" layer="25" ratio="18"/>
 <attribute name="VALUE" x="8.3" y="30" size="0.8128" layer="27" font="vector" ratio="10" rot="R180"/>
 </element>
 <element name="S2" library="SparkFun-Switches" package="SWITCH_SPST_SMD_A" value="" x="1.5" y="26" smashed="yes" rot="R90">
-<attribute name="NAME" x="3.287" y="27.242" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
+<attribute name="NAME" x="3.207" y="26.592" size="0.6096" layer="25" font="vector" ratio="20" rot="R270" align="bottom-center"/>
 <attribute name="PROD_ID" value="SWCH-10651" x="28.17" y="43.78" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="SF_SKU" value="COM-10860" x="28.17" y="43.78" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="0.103" y="26" size="0.6096" layer="27" font="vector" ratio="20" rot="R270" align="top-center"/>
@@ -1875,24 +1881,24 @@ by exp-lbrs.ulp</description>
 </element>
 <element name="U$21" library="adafruit_sensor" package="QFN24_3MM_NOEP" value="MPU-9250_ICM20948" x="7.5" y="13" smashed="yes" rot="R270"/>
 <element name="U1" library="microbuilder" package="SOT23-5" value="MIC5225-1.8V" x="15.6" y="27.6" smashed="yes" rot="R180">
-<attribute name="NAME" x="15.128" y="25.21" size="0.8128" layer="25" ratio="18"/>
+<attribute name="NAME" x="14.078" y="24.79" size="0.8128" layer="25" ratio="18"/>
 <attribute name="VALUE" x="13.622" y="28.235" size="0.4064" layer="27" ratio="10" rot="R180"/>
 </element>
 <element name="U$2" library="2x4x3.5sw" package="2*4*3.5" value="24*3.5" x="1.5" y="10.5" smashed="yes" rot="R90"/>
 <element name="R5" library="microbuilder" package="0805-NO" value="10K" x="2.29" y="23" smashed="yes" rot="MR0">
-<attribute name="NAME" x="0.258" y="22.873" size="0.8128" layer="26" ratio="18" rot="MR0"/>
+<attribute name="NAME" x="3.328" y="23.883" size="0.8128" layer="26" ratio="18" rot="MR0"/>
 <attribute name="VALUE" x="0.258" y="22.238" size="0.4064" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="R4" library="microbuilder" package="0805-NO" value="10K" x="2.29" y="20.5" smashed="yes" rot="MR0">
-<attribute name="NAME" x="0.258" y="20.373" size="0.8128" layer="26" ratio="18" rot="MR0"/>
+<attribute name="NAME" x="2.768" y="18.733" size="0.8128" layer="26" ratio="18" rot="MR0"/>
 <attribute name="VALUE" x="0.258" y="19.738" size="0.4064" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="R6" library="microbuilder" package="0805-NO" value="10K" x="2.29" y="16.46" smashed="yes" rot="MR0">
-<attribute name="NAME" x="0.258" y="16.333" size="0.8128" layer="26" ratio="18" rot="MR0"/>
+<attribute name="NAME" x="5.228" y="16.043" size="0.8128" layer="26" ratio="18" rot="MR0"/>
 <attribute name="VALUE" x="0.258" y="15.698" size="0.4064" layer="28" ratio="10" rot="MR0"/>
 </element>
 <element name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" package="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k" x="13.57" y="16.96" smashed="yes" rot="MR270">
-<attribute name="NAME" x="12.3" y="17.595" size="1.27" layer="26" rot="MR270"/>
+<attribute name="NAME" x="12.915" y="15.01" size="0.8128" layer="26" ratio="18" rot="MR180"/>
 <attribute name="POPULARITY" value="86" x="13.57" y="16.96" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="SPICEPREFIX" value="R" x="13.57" y="16.96" size="1.778" layer="28" rot="MR270" display="off"/>
 <attribute name="VALUE" x="16.11" y="17.595" size="1.27" layer="28" rot="MR270"/>
@@ -1904,7 +1910,6 @@ by exp-lbrs.ulp</description>
 <element name="U$6" library="M3-Hole" package="M0.9-HOLE" value="M0.9-HOLE0.9MM" x="6" y="5.5" smashed="yes"/>
 <element name="U$12" library="M3-Hole" package="M0.9-HOLE" value="M0.9-HOLE0.9MM" x="6" y="3" smashed="yes"/>
 <element name="U$13" library="my_library" package="FPC0905" value="FPC090505" x="16.68" y="12.21" smashed="yes" rot="R270">
-<attribute name="NAME" x="19.22" y="9.67" size="1.27" layer="25" rot="R270"/>
 <attribute name="VALUE" x="17.95" y="9.67" size="1.27" layer="27" rot="R270"/>
 </element>
 </elements>
