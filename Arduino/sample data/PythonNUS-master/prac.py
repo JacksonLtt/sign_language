@@ -2,8 +2,8 @@ from bleak import BleakClient, discover, BleakError
 import asyncio
 import struct
 
-count_left = 0
-count_right = 0
+count_left = 1
+count_right = 1
 
 UART_TX_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e" #Nordic NUS characteristic for TX
 UART_RX_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e" #Nordic NUS characteristic for RX
@@ -57,8 +57,10 @@ async def connect_to_device(address, loop):
 
         print("connect to ", address)
         try:
+            # x = await client.is_connected()
+            # print("Connected: {0}".format(x))
             await client.start_notify(UART_RX_UUID, callback)
-            await asyncio.sleep(1.0)
+            await asyncio.sleep(10)
             await client.stop_notify(UART_RX_UUID)
         except Exception as e:
             print(e)

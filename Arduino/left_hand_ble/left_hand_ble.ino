@@ -51,6 +51,7 @@ unsigned long init_time_1;
 unsigned long init_time_2;
 
 unsigned long id = 0;
+int count = 0;
 
 // Library for BLE
 class MyServerCallbacks: public BLEServerCallbacks {
@@ -411,37 +412,37 @@ void loop()
     };
 
 
-    Serial.print('[');
-
-    Serial.print(accel_x_0); Serial.print(','); Serial.print(accel_y_0); Serial.print(','); Serial.print(accel_z_0); Serial.print(',');
-    Serial.print(mag_x_0); Serial.print(','); Serial.print(mag_y_0); Serial.print(','); Serial.print(mag_z_0); Serial.print(',');
-    Serial.print(gyro_x_0); Serial.print(','); Serial.print(gyro_y_0); Serial.print(','); Serial.print(gyro_z_0); Serial.print(',');
-    Serial.print(accel_x_1); Serial.print(','); Serial.print(accel_y_1); Serial.print(','); Serial.print(accel_z_1); Serial.print(',');
-    Serial.print(mag_x_1); Serial.print(','); Serial.print(mag_y_1); Serial.print(','); Serial.print(mag_z_1); Serial.print(',');
-    Serial.print(gyro_x_1); Serial.print(','); Serial.print(gyro_y_1); Serial.print(','); Serial.print(gyro_z_1); Serial.print(',');
-
-    Serial.print(accel_x_2); Serial.print(','); Serial.print(accel_y_2); Serial.print(','); Serial.print(accel_z_2); Serial.print(',');
-    Serial.print(mag_x_2); Serial.print(','); Serial.print(mag_y_2); Serial.print(','); Serial.print(mag_z_2); Serial.print(',');
-    Serial.print(gyro_x_2); Serial.print(','); Serial.print(gyro_y_2); Serial.print(','); Serial.print(gyro_z_1); Serial.print(',');
-
-    Serial.print(accel_x_3); Serial.print(','); Serial.print(accel_y_3); Serial.print(','); Serial.print(accel_z_3); Serial.print(',');
-    Serial.print(mag_x_3); Serial.print(','); Serial.print(mag_y_3); Serial.print(','); Serial.print(mag_z_3); Serial.print(',');
-    Serial.print(gyro_x_3); Serial.print(','); Serial.print(gyro_y_3); Serial.print(','); Serial.print(gyro_z_3); Serial.print(',');
-
-    Serial.print(accel_x_4); Serial.print(','); Serial.print(accel_y_4); Serial.print(','); Serial.print(accel_z_4); Serial.print(',');
-    Serial.print(mag_x_4); Serial.print(','); Serial.print(mag_y_4); Serial.print(','); Serial.print(mag_z_4); Serial.print(',');
-    Serial.print(gyro_x_4); Serial.print(','); Serial.print(gyro_y_4); Serial.print(','); Serial.print(gyro_z_4); Serial.print(',');
-
-    Serial.print(accel_x_5); Serial.print(','); Serial.print(accel_y_5); Serial.print(','); Serial.print(accel_z_5); Serial.print(',');
-    Serial.print(mag_x_5); Serial.print(','); Serial.print(mag_y_5); Serial.print(','); Serial.print(mag_z_5); Serial.print(',');
-    Serial.print(gyro_x_5); Serial.print(','); Serial.print(gyro_y_5); Serial.print(','); Serial.print(gyro_z_5); Serial.print(',');
-    Serial.print(init_time_1);Serial.print(','); Serial.print(id); 
-
-
-
-    Serial.print(']');
-    Serial.print('\r');
-    Serial.print('\n');
+//    Serial.print('[');
+//
+//    Serial.print(accel_x_0); Serial.print(','); Serial.print(accel_y_0); Serial.print(','); Serial.print(accel_z_0); Serial.print(',');
+//    Serial.print(mag_x_0); Serial.print(','); Serial.print(mag_y_0); Serial.print(','); Serial.print(mag_z_0); Serial.print(',');
+//    Serial.print(gyro_x_0); Serial.print(','); Serial.print(gyro_y_0); Serial.print(','); Serial.print(gyro_z_0); Serial.print(',');
+//    Serial.print(accel_x_1); Serial.print(','); Serial.print(accel_y_1); Serial.print(','); Serial.print(accel_z_1); Serial.print(',');
+//    Serial.print(mag_x_1); Serial.print(','); Serial.print(mag_y_1); Serial.print(','); Serial.print(mag_z_1); Serial.print(',');
+//    Serial.print(gyro_x_1); Serial.print(','); Serial.print(gyro_y_1); Serial.print(','); Serial.print(gyro_z_1); Serial.print(',');
+//
+//    Serial.print(accel_x_2); Serial.print(','); Serial.print(accel_y_2); Serial.print(','); Serial.print(accel_z_2); Serial.print(',');
+//    Serial.print(mag_x_2); Serial.print(','); Serial.print(mag_y_2); Serial.print(','); Serial.print(mag_z_2); Serial.print(',');
+//    Serial.print(gyro_x_2); Serial.print(','); Serial.print(gyro_y_2); Serial.print(','); Serial.print(gyro_z_1); Serial.print(',');
+//
+//    Serial.print(accel_x_3); Serial.print(','); Serial.print(accel_y_3); Serial.print(','); Serial.print(accel_z_3); Serial.print(',');
+//    Serial.print(mag_x_3); Serial.print(','); Serial.print(mag_y_3); Serial.print(','); Serial.print(mag_z_3); Serial.print(',');
+//    Serial.print(gyro_x_3); Serial.print(','); Serial.print(gyro_y_3); Serial.print(','); Serial.print(gyro_z_3); Serial.print(',');
+//
+//    Serial.print(accel_x_4); Serial.print(','); Serial.print(accel_y_4); Serial.print(','); Serial.print(accel_z_4); Serial.print(',');
+//    Serial.print(mag_x_4); Serial.print(','); Serial.print(mag_y_4); Serial.print(','); Serial.print(mag_z_4); Serial.print(',');
+//    Serial.print(gyro_x_4); Serial.print(','); Serial.print(gyro_y_4); Serial.print(','); Serial.print(gyro_z_4); Serial.print(',');
+//
+//    Serial.print(accel_x_5); Serial.print(','); Serial.print(accel_y_5); Serial.print(','); Serial.print(accel_z_5); Serial.print(',');
+//    Serial.print(mag_x_5); Serial.print(','); Serial.print(mag_y_5); Serial.print(','); Serial.print(mag_z_5); Serial.print(',');
+//    Serial.print(gyro_x_5); Serial.print(','); Serial.print(gyro_y_5); Serial.print(','); Serial.print(gyro_z_5); Serial.print(',');
+//    Serial.print(init_time_1);Serial.print(','); Serial.print(id); 
+//
+//
+//
+//    Serial.print(']');
+//    Serial.print('\r');
+//    Serial.print('\n');
 
 
 
@@ -471,17 +472,18 @@ void loop()
     pTxCharacteristic->setValue(byteArray, total_size);
     pTxCharacteristic->notify();
     init_time_2 = micros();
-
+    count += 1;
     Serial.print("data:");
-    Serial.println(init_time_2 - init_time_1);
+    Serial.println(count);
 
-    delay(3);
+    delay(2);
   }
   // disconnecting
   if (!deviceConnected && oldDeviceConnected) {
     delay(500); // give the bluetooth stack the chance to get things ready
     pServer->startAdvertising(); // restart advertising
     Serial.println("start advertising");
+    count = 0;
     oldDeviceConnected = deviceConnected;
   }
 
