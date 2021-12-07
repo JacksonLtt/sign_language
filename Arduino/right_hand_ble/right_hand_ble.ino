@@ -51,6 +51,7 @@ unsigned long init_time_1;
 unsigned long init_time_2;
 
 unsigned long id = 1;
+int count = 0;
 
 // Library for BLE
 class MyServerCallbacks: public BLEServerCallbacks {
@@ -473,9 +474,10 @@ void loop()
     init_time_2 = micros();
 
     Serial.print("data:");
-    Serial.println(init_time_2 - init_time_1);
+    count+=1;
+    Serial.println(count);
 
-//    delay(3);
+    delay(2);
   }
   // disconnecting
   if (!deviceConnected && oldDeviceConnected) {
@@ -483,6 +485,7 @@ void loop()
     pServer->startAdvertising(); // restart advertising
     Serial.println("start advertising");
     oldDeviceConnected = deviceConnected;
+    count = 0;
   }
 
   // connecting
