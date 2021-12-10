@@ -233,7 +233,7 @@ void setup()
   Serial.println("Mux Shield online");
 
   // Create the BLE Device
-  BLEDevice::init("right hand");
+  BLEDevice::init("` hand");
 
   // Create the BLE Server
   pServer = BLEDevice::createServer();
@@ -477,7 +477,7 @@ void loop()
     count+=1;
     Serial.println(count);
 
-    delay(2);
+    delay(10);
   }
   // disconnecting
   if (!deviceConnected && oldDeviceConnected) {

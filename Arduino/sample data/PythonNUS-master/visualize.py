@@ -12,7 +12,8 @@ def visualize1D():
 	title = ["_".join(x.split("_")[:-1]) for x in header[1:10]]
 	ylabels = ["wrist", "thumb", "index", "middle", "ring", "pinky"]
 	
-
+	# print(type(_finger))
+	# print(_finger[1]['accl'])
 	for kf, vf in _finger.items():
 		axs[kf, 0].set_ylabel(ylabels[kf])
 		for ks, vs in _sensor.items():
@@ -24,6 +25,30 @@ def visualize1D():
 	plt.show()
 
 
+
+def visualize_mag():
+	print(_finger)
+	# fig, axs = plt.subplots(1, 3)
+	# fig.suptitle("1d projection")
+	#
+	# title = ["_".join(x.split("_")[:-1]) for x in header2[1:10]]
+	# ylabels = ["wrist", "thumb", "index", "middle", "ring", "pinky"]
+	#
+	# for kf, vf in _finger.items():
+	# 	axs[kf, 0].set_ylabel(ylabels[kf])
+	# 	for ks, vs in _sensor.items():
+	# 		for ka, va in _axis.items():
+	# 			axs[kf, ks * 3 + ka].plot(vf[vs][va])
+	# 			if kf == 0:
+	# 				axs[kf, ks * 3 + ka].set_title(title[ks * 3 + ka])
+	#
+	# plt.show()
+
+# header2 = ["time_stamp",\
+#
+# 	"accel_x_0", "accel_y_0", "accel_z_0",\
+# 	"mag_x_0"  , "mag_y_0"  , "mag_z_0"  ,\
+# 	"gyro_x_0" , "gyro_y_0" , "gyro_z_0" ]
 
 header = ["time_stamp",\
 
@@ -132,14 +157,14 @@ def checkSampling(ts):
 		diff.append((ts[i+1] - ts[i])/1000)
 		# print((ts[i+1] - ts[i]))
 
-	plt.plot(x, diff, 'o', color='black')
-	print(min(diff))
-	print(sorted(diff))
-	sorted_diff = sorted(diff)[100:-300]
-	print(sorted_diff)
-	print(sum(sorted_diff)/len(sorted_diff))
-	plt.ylim([0, 15])
-	plt.show()
+	# plt.plot(x, diff, 'o', color='black')
+	# print(min(diff))
+	# print(sorted(diff))
+	# sorted_diff = sorted(diff)
+	# print(sorted_diff)
+	# print(sum(sorted_diff)/len(sorted_diff))
+	# plt.ylim([0,20])
+	# plt.show()
 
 
 def readtxt(file):
@@ -239,7 +264,7 @@ if __name__ == "__main__":
 
 	file = None
 	if len(sys.argv) == 1:
-		file = "CALI.txt"
+		file = "10.txt"
 	else:
 		file = sys.argv[1]
 	# readcsv(file)
