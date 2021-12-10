@@ -412,7 +412,7 @@ void loop()
     };
 
 
-    Serial.print('[');
+//    Serial.print('[');
 //
 //    Serial.print(accel_x_0); Serial.print(','); Serial.print(accel_y_0); Serial.print(','); Serial.print(accel_z_0); Serial.print(',');
 //    Serial.print(mag_x_0); Serial.print(','); Serial.print(mag_y_0); Serial.print(','); Serial.print(mag_z_0); Serial.print(',');
@@ -422,7 +422,7 @@ void loop()
 //    Serial.print(gyro_x_1); Serial.print(','); Serial.print(gyro_y_1); Serial.print(','); Serial.print(gyro_z_1); Serial.print(',');
 //
 //    Serial.print(accel_x_2); Serial.print(','); Serial.print(accel_y_2); Serial.print(','); Serial.print(accel_z_2); Serial.print(',');
-    Serial.print(mag_x_2); Serial.print(','); Serial.print(mag_y_2); Serial.print(','); Serial.print(mag_z_2); Serial.print(',');
+//    Serial.print(mag_x_2); Serial.print(','); Serial.print(mag_y_2); Serial.print(','); Serial.print(mag_z_2); Serial.print(',');
 //    Serial.print(gyro_x_2); Serial.print(','); Serial.print(gyro_y_2); Serial.print(','); Serial.print(gyro_z_1); Serial.print(',');
 //
 //    Serial.print(accel_x_3); Serial.print(','); Serial.print(accel_y_3); Serial.print(','); Serial.print(accel_z_3); Serial.print(',');
@@ -440,9 +440,9 @@ void loop()
 //
 //
 //
-    Serial.print(']');
-    Serial.print('\r');
-    Serial.print('\n');
+//    Serial.print(']');
+//    Serial.print('\r');
+//    Serial.print('\n');
 
 
 
@@ -476,7 +476,7 @@ void loop()
     Serial.print("data:");
     Serial.println(count);
 
-    delay(2);
+    delay(10);
   }
   // disconnecting
   if (!deviceConnected && oldDeviceConnected) {

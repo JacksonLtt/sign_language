@@ -25,10 +25,10 @@ def decode_byte_data(bytedata):
         tmp_float = unpack_f_bytearray(bytedata[i*4:i*4+4])
         float_array.append(tmp_float)
 
-    # float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 8:-4] + bytes([0, 0, 0, 0]))) # macos struct.error: unpack requires a buffer of 8 bytes
-    # float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 4:] + bytes([0, 0, 0, 0]))) # macos struct.error: unpack requires a buffer of 8 bytes
-    float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 8:-4] ))  # windows struct.error: unpack requires a buffer of 4 bytes
-    float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 4:])) # windows struct.error: unpack requires a buffer of 4 bytes
+    float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 8:-4] + bytes([0, 0, 0, 0]))) # macos struct.error: unpack requires a buffer of 8 bytes
+    float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 4:] + bytes([0, 0, 0, 0]))) # macos struct.error: unpack requires a buffer of 8 bytes
+    # float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 8:-4] ))  # windows struct.error: unpack requires a buffer of 4 bytes
+    # float_array.append(unpack_l_bytearray(bytedata[len(list(bytedata)) - 4:])) # windows struct.error: unpack requires a buffer of 4 bytes
     return float_array
 
 
@@ -41,12 +41,13 @@ def callback(sender, data):
     global count_right
     global f
     if result[-1] == 0:
-        print("left count: ", count_left, "result", result)
+        # print("left count: ", count_left, "result", result)
+        print("left count: ", count_left)
         count_left += 1
 
     if result[-1] ==1:
-        print("right count: ", count_right, "result", result)
-        # print(result)
+        # print("right count: ", count_right, "result", result)
+        print("right count: ", count_right)
         f.write(str(result[:-1]) + "\n")
         count_right += 1
 
@@ -87,11 +88,11 @@ async def connect_to_device(address, loop):
             # print("Connected: {0}".format(x))
             await client.start_notify(UART_RX_UUID, callback)
             # await client.start_notify(UART_RX_UUID,  partial(my_notification_callback_with_client_input, client))
-            await asyncio.sleep(20)
+            await asyncio.sleep(50)
 
             await client.stop_notify(UART_RX_UUID)
             print("end")
-            f.close()
+
 
         except Exception as e:
             print(e)
@@ -99,16 +100,20 @@ async def connect_to_device(address, loop):
     print("disconnect from", address)
 
 # f = open("C:/Users/txl5518/Documents/Github/sign_language/Arduino/sample data/PythonNUS-master/7.txt",'w',newline='')
-f = open("C:/Users/Taiting/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/10.txt",'w',newline='')
+# f = open("C:/Users/Taiting/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/10.txt",'w',newline='')
+f = open("/Users/taitinglu/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/7.txt",'w',newline='')
+
 if __name__ == "__main__":
     # addresses = [("D8:A0:1D:5D:7E:FE", "right_hand")]
     # addresses = [("A4:E5:7C:C0:04:E2","left_hand")]
     # addresses = [("D8:A0:1D:5D:7E:FE","right_hand"),("A4:E5:7C:C0:04:E2","left_hand")]
 
     # addresses = [("50:02:91:A1:AA:32","left_hand")]
-    addresses = [("50:02:91:A1:A7:5A", "right_hand")]
+    # addresses = [("50:02:91:A1:A7:5A", "right_hand")]
     # addresses = [("50:02:91:A1:A7:5A", "right_hand"), ("50:02:91:A1:AA:32", "left_hand")]
+    addresses = [('9C211E49-F2B3-45CE-B691-9B13D58217C9',"right hand"),('E08FC2D4-E70E-42B0-A767-07A6F555736C','left hand')]
     run_connect(addresses)
+    f.close()
     print("left count: ",count_left)
     print("right count: ",count_right)
 
