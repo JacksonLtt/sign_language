@@ -1,0 +1,5 @@
+name	setting	test
+1	mag in index, test in thumb	index hor move 5 times
+2	mag in index, test in thumb	index ver move 5 times
+3	no mag			index ver move 5 times
+4	mag in index		index ver move 5 times
