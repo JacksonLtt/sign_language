@@ -264,7 +264,7 @@ if __name__ == "__main__":
 
 	file = None
 	if len(sys.argv) == 1:
-		file = "10.txt"
+		file = "7.txt"
 	else:
 		file = sys.argv[1]
 	# readcsv(file)
