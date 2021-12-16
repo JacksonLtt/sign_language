@@ -127,8 +127,12 @@ if __name__ == "__main__":
     # addresses = [("50:02:91:A1:A7:5A", "right_hand")]
     # addresses = [("50:02:91:A1:A7:5A", "right_hand"), ("50:02:91:A1:AA:32", "left_hand")]
     addresses = [('9C211E49-F2B3-45CE-B691-9B13D58217C9',"right hand"),('E08FC2D4-E70E-42B0-A767-07A6F555736C','left hand')]
+<<<<<<< Updated upstream
     addresses = [("C8:B3:A4:26:46:8F","Feather nRF52832")]
     # addresses = [('AC:67:B2:36:82:BE',"left hand")]
+=======
+    
+>>>>>>> Stashed changes
     run_connect(addresses)
     f.close()
     print("left count: ",count_left)
