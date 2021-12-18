@@ -22,14 +22,14 @@ void setup()
 
   Serial.begin(115200);
   SPI.begin();
-  SPI.beginTransaction(SPISettings(7000000, MSBFIRST, SPI_MODE0));
+  //  SPI.beginTransaction(SPISettings(7000000, MSBFIRST, SPI_MODE0));
 
   ICM20948_Sensor = new ICM_20948_SPI *[NUMBER_OF_SENSORS];
 
   for (int x = 0; x < NUMBER_OF_SENSORS; x++)
     ICM20948_Sensor[x] = new ICM_20948_SPI();
 
-  init_icm(ICM20948_Sensor[0], 0);
+//  init_icm(ICM20948_Sensor[0], 0);
   init_icm(ICM20948_Sensor[1], 1);
 //  init_icm(ICM20948_Sensor[2], 2);
 
@@ -69,7 +69,7 @@ void update_imu(ICM_20948_SPI *sensor, int index) {
   {
     sensor->getAGMT();         // The values are only updated when you call 'getAGMT'
     //    printRawAGMT( myICM.agmt );     // Uncomment this to see the raw values, taken directly from the agmt structure
-    //    printScaledAGMT(&myICM); // This function takes into account the scale settings from when the measurement was made to calculate the values with units
+    printScaledAGMT(sensor); // This function takes into account the scale settings from when the measurement was made to calculate the values with units
     delay(1);
   }
   else
@@ -84,8 +84,8 @@ void update_imu(ICM_20948_SPI *sensor, int index) {
 void loop()
 {
   //  unsigned long init_time = micros();
-  ////  update_imu(ICM20948_Sensor[0], 0);
-  //  update_imu(ICM20948_Sensor[2], 2);
+  //  update_imu(ICM20948_Sensor[0], 0);
+  //  update_imu(ICM20948_Sensor[1], 1);
   //  Serial.print("diff: ");
   //  Serial.println(micros() - init_time);
 }
