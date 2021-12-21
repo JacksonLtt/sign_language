@@ -13,5 +13,5 @@ def find_device(name):
     print(list_name)
     return name in list_name
 
-print(find_device("Left hand"))
+print(find_device("BatteryMonitor"))
 
