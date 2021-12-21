@@ -20,6 +20,7 @@ bool INIT_IMU(ICM_20948_SPI* ICM, int CS_PIN) {
   while (!initialized)
   {
     ICM->begin(CS_PIN, SPI);
+    ICM->startupDefault(false);
     Serial.print("Init ICM-");
     Serial.print(CS_PIN);
 
@@ -88,7 +89,7 @@ void setup()
   SPI.beginTransaction(SPISettings(7000000, MSBFIRST, SPI_MODE0));
   INIT_IMU(&ICM1, 2);
   INIT_IMU(&ICM2, 3);
-  //  INIT_IMU(&ICM1, 4);
+  INIT_IMU(&ICM3, 4);
   //  INIT_IMU(&ICM2, 5);
   //  INIT_IMU(&ICM1, 8);
   //  INIT_IMU(&ICM2, 9);
@@ -166,7 +167,7 @@ bool check_imu_ready(ICM_20948_SPI ICM, icm_20948_DMP_data_t ICM_Data) {
 bool check_all_imu_ready( icm_20948_DMP_data_t ICM_Data[]) {
   bool success = true;
 
-//  success &= check_imu_ready(ICM1, ICM_Data[0]);
+  //  success &= check_imu_ready(ICM1, ICM_Data[0]);
   success &= check_imu_ready(ICM2, ICM_Data[1]);
 
 
@@ -175,26 +176,26 @@ bool check_all_imu_ready( icm_20948_DMP_data_t ICM_Data[]) {
 
 void loop()
 {
-  icm_20948_DMP_data_t data_1;
-  ICM1.readDMPdataFromFIFO(&data_1);
-
-  icm_20948_DMP_data_t data_2;
-  ICM2.readDMPdataFromFIFO(&data_2);
-
-  icm_20948_DMP_data_t ICM_Data[2] = {data_1, data_2};
-
-  if (check_all_imu_ready(ICM_Data)) {
-
-//    Serial.print("ICM_1: ");
-//    print_imu_data(ICM1, data_1);
-    Serial.print("ICM_2: ");
-    print_imu_data(ICM2, data_2);
-//    Serial.println();
-
-    Serial.print("diff comp:");
-    Serial.println(micros() - init_time);
-    init_time = micros();
-  }
+//  icm_20948_DMP_data_t data_1;
+//  ICM1.readDMPdataFromFIFO(&data_1);
+//
+//  icm_20948_DMP_data_t data_2;
+//  ICM2.readDMPdataFromFIFO(&data_2);
+//
+//  icm_20948_DMP_data_t ICM_Data[2] = {data_1, data_2};
+//
+//  if (check_all_imu_ready(ICM_Data)) {
+//
+//    //    Serial.print("ICM_1: ");
+//    //    print_imu_data(ICM1, data_1);
+//    Serial.print("ICM_2: ");
+//    print_imu_data(ICM2, data_2);
+//    //    Serial.println();
+//
+//    Serial.print("diff comp:");
+//    Serial.println(micros() - init_time);
+//    init_time = micros();
+//  }
 
 }
 
