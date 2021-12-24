@@ -72,7 +72,7 @@ void update_imu(ICM_20948_SPI *sensor, int index) {
   {
     sensor->getAGMT();         // The values are only updated when you call 'getAGMT'
     //    printRawAGMT( myICM.agmt );     // Uncomment this to see the raw values, taken directly from the agmt structure
-        printScaledAGMT(sensor); // This function takes into account the scale settings from when the measurement was made to calculate the values with units
+    printScaledAGMT(sensor); // This function takes into account the scale settings from when the measurement was made to calculate the values with units
     getScaledAGMT(sensor);
     //    delay(1);
   }
