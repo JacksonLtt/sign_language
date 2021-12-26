@@ -46,17 +46,16 @@ def decode_byte_data(bytedata):
 
 
 def callback(sender, data):
-
+    global count_right
+    count_right += 1
     # print(count_left, ",", data)
     # print(sender,",",data,",",unpack_f_bytearray(data))
     # print("size: ",len(data.decode())+1,"decoder: ",data.decode())
-    # result = decode_byte_data(data)
-    # print(len(set(result)),":",result)
+    result = decode_byte_data(data)
+    print(len(result),":",count_right,":",result)
 
 
-    global count_right
-    count_right +=1
-    print(count_right)
+
     # global f
     # if result[-1] == 0:
     #     # print("left count: ", count_left, "result", result)

@@ -222,17 +222,17 @@ void update_to_all_imu(ICM_20948_SPI *sensor, int index) {
   //  float magy = sensor->magY();
   //  float magz = sensor->magZ();
 
-  ALL_IMU[index * 6] = sensor->accX() * 0.01;
-  ALL_IMU[index * 6 + 1] = sensor->accY() * 0.01;
-  ALL_IMU[index * 6 + 2] = sensor->accZ() * 0.01;
+  ALL_IMU[index * 9] = sensor->accX() * 0.01;
+  ALL_IMU[index * 9 + 1] = sensor->accY() * 0.01;
+  ALL_IMU[index * 9 + 2] = sensor->accZ() * 0.01;
 
-  ALL_IMU[index * 6 + 3] = sensor->gyrX();
-  ALL_IMU[index * 6 + 4] = sensor->gyrY();
-  ALL_IMU[index * 6 + 5] = sensor->gyrZ();
+  ALL_IMU[index * 9 + 3] = sensor->gyrX();
+  ALL_IMU[index * 9 + 4] = sensor->gyrY();
+  ALL_IMU[index * 9 + 5] = sensor->gyrZ();
 
-  ALL_IMU[index * 6 + 6] = sensor->magX();
-  ALL_IMU[index * 6 + 7] = sensor->magY();
-  ALL_IMU[index * 6 + 8] = sensor->magZ();
+  ALL_IMU[index * 9 + 6] = sensor->magX();
+  ALL_IMU[index * 9 + 7] = sensor->magY();
+  ALL_IMU[index * 9 + 8] = sensor->magZ();
 }
 
 void update_imu(ICM_20948_SPI *sensor, int index) {
@@ -257,6 +257,12 @@ void update_imu(ICM_20948_SPI *sensor, int index) {
   //  Serial.println(micros() - init_time);
 }
 
+
+void clear_all_imu() {
+  for (int i = 0; i < 55; i++) {
+    ALL_IMU[i] = 0;
+  }
+}
 void loop()
 {
 
@@ -272,8 +278,13 @@ void loop()
     update_imu(ICM20948_Sensor[2], 2);
     update_imu(ICM20948_Sensor[3], 3);
     update_imu(ICM20948_Sensor[4], 4);
+    
 
+    ALL_IMU[54] = send_time;
+    
     send_message();
+    clear_all_imu();
+    
     COUNT += 1;
     Serial.println(COUNT);
   }
@@ -281,8 +292,16 @@ void loop()
   if (!Bluefruit.connected()) {
     COUNT = 0;
   }
+//  delay(1000);
 }
 
+void print_all_imu() {
+  Serial.print("[");
+  for (int i = 0; i < 55; i++) {
+    Serial.print(ALL_IMU[i]); Serial.print(",");
+  }
+  Serial.println("]");
+}
 
 void send_message(void)
 {
@@ -290,22 +309,18 @@ void send_message(void)
   int total_size = (packet_size + 1) * 4;
   byte byteArray[total_size];// 10+1
 
-  Serial.print("[");
+  
   for (int i = 0; i < 55; i++) {
-    Serial.print(ALL_IMU[i]);
-  }
-  Serial.println("]");
-  for (int i = 0; i < packet_size; i++) {
     byteArray[i * 4] = ((uint8_t*)&ALL_IMU[i])[0];
     byteArray[i * 4 + 1] = ((uint8_t*)&ALL_IMU[i])[1];
     byteArray[i * 4 + 2] = ((uint8_t*)&ALL_IMU[i])[2];
     byteArray[i * 4 + 3] = ((uint8_t*)&ALL_IMU[i])[3];
   }
 
-  byteArray[packet_size * 4] = ((uint8_t*)&send_time)[0];
-  byteArray[packet_size * 4 + 1] = ((uint8_t*)&send_time)[1];
-  byteArray[packet_size * 4 + 2] = ((uint8_t*)&send_time)[2];
-  byteArray[packet_size * 4 + 3] = ((uint8_t*)&send_time)[3];
+//  byteArray[packet_size * 4] = ((uint8_t*)&send_time)[0];
+//  byteArray[packet_size * 4 + 1] = ((uint8_t*)&send_time)[1];
+//  byteArray[packet_size * 4 + 2] = ((uint8_t*)&send_time)[2];
+//  byteArray[packet_size * 4 + 3] = ((uint8_t*)&send_time)[3];
 
 
 
