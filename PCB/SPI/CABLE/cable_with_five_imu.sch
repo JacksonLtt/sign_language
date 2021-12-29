@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -1408,6 +1408,73 @@ Switches electronic signals</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="my_library">
+<packages>
+<package name="FPC1105">
+<smd name="P$1" x="-2" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$2" x="-1.5" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$3" x="-1" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$4" x="-0.5" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$5" x="0" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$6" x="0.5" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$8" x="1.5" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$7" x="1" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$9" x="2" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<text x="2.54" y="2.54" size="1.27" layer="25">&gt;NAME</text>
+<text x="2.54" y="1.27" size="1.27" layer="27">&gt;VALUE</text>
+<smd name="P$10" x="2.5" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+<smd name="P$11" x="3" y="0" dx="1.7" dy="0.3" layer="1" rot="R90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="FPC1105">
+<pin name="P$1" x="0" y="10.16" visible="pin" length="short"/>
+<pin name="P$2" x="0" y="7.62" visible="pin" length="short"/>
+<pin name="P$3" x="0" y="5.08" visible="pin" length="short"/>
+<pin name="P$4" x="0" y="2.54" visible="pin" length="short"/>
+<pin name="P$5" x="0" y="0" visible="pin" length="short"/>
+<pin name="P$6" x="0" y="-2.54" visible="pin" length="short"/>
+<pin name="P$7" x="0" y="-5.08" visible="pin" length="short"/>
+<pin name="P$8" x="0" y="-7.62" visible="pin" length="short"/>
+<pin name="P$9" x="0" y="-10.16" visible="pin" length="short"/>
+<wire x1="-2.54" y1="12.7" x2="2.54" y2="12.7" width="0.254" layer="94"/>
+<wire x1="2.54" y1="12.7" x2="2.54" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-17.78" x2="-2.54" y2="-17.78" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-17.78" x2="-2.54" y2="12.7" width="0.254" layer="94"/>
+<text x="5.08" y="15.24" size="1.27" layer="95">&gt;NAME</text>
+<text x="5.08" y="12.7" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="P$10" x="0" y="-12.7" visible="pin" length="short"/>
+<pin name="P$11" x="0" y="-15.24" visible="pin" length="short"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="FPC1105">
+<gates>
+<gate name="G$1" symbol="FPC1105" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="FPC1105">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1"/>
+<connect gate="G$1" pin="P$10" pad="P$10"/>
+<connect gate="G$1" pin="P$11" pad="P$11"/>
+<connect gate="G$1" pin="P$2" pad="P$2"/>
+<connect gate="G$1" pin="P$3" pad="P$3"/>
+<connect gate="G$1" pin="P$4" pad="P$4"/>
+<connect gate="G$1" pin="P$5" pad="P$5"/>
+<connect gate="G$1" pin="P$6" pad="P$6"/>
+<connect gate="G$1" pin="P$7" pad="P$7"/>
+<connect gate="G$1" pin="P$8" pad="P$8"/>
+<connect gate="G$1" pin="P$9" pad="P$9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -1492,6 +1559,7 @@ Switches electronic signals</description>
 <part name="R12" library="SparkFun-Resistors" deviceset="2.2KOHM" device="-0402T-1/16W-1%" value="2.2k"/>
 <part name="SUPPLY17" library="SparkFun-PowerSymbols" deviceset="1.8V" device=""/>
 <part name="SUPPLY18" library="SparkFun-PowerSymbols" deviceset="VIN" device=""/>
+<part name="U$1" library="my_library" deviceset="FPC1105" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1773,6 +1841,10 @@ Switches electronic signals</description>
 <instance part="SUPPLY18" gate="G$1" x="314.46" y="8.9" smashed="yes">
 <attribute name="VALUE" x="314.46" y="11.694" size="1.778" layer="96" align="bottom-center"/>
 </instance>
+<instance part="U$1" gate="G$1" x="350" y="5" smashed="yes">
+<attribute name="NAME" x="355.08" y="20.24" size="1.27" layer="95"/>
+<attribute name="VALUE" x="355.08" y="17.7" size="1.27" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -1883,6 +1955,11 @@ Switches electronic signals</description>
 <pinref part="GND24" gate="1" pin="GND"/>
 <wire x1="210.32" y1="-11.42" x2="210.32" y2="-13.96" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$1"/>
+<wire x1="350" y1="15.16" x2="364.82" y2="15.16" width="0.1524" layer="91"/>
+<label x="364.83" y="15.12" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$2" class="0">
 <segment>
@@ -1918,6 +1995,12 @@ Switches electronic signals</description>
 <wire x1="266.2" y1="-1.26" x2="263.66" y2="-1.26" width="0.1524" layer="91"/>
 <label x="266.2" y="-1.26" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$4"/>
+<wire x1="350" y1="7.54" x2="364.66" y2="7.54" width="0.1524" layer="91"/>
+<wire x1="364.66" y1="7.54" x2="364.66" y2="7.52" width="0.1524" layer="91"/>
+<label x="364.64" y="7.54" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="SCLK_VIN" class="0">
 <segment>
@@ -1944,6 +2027,12 @@ Switches electronic signals</description>
 <pinref part="U6" gate="G$1" pin="SCL/SCLK"/>
 <wire x1="266.2" y1="1.28" x2="263.66" y2="1.28" width="0.1524" layer="91"/>
 <label x="266.2" y="1.28" size="1.27" layer="95" font="vector" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$3"/>
+<wire x1="350" y1="10.08" x2="364.68" y2="10.08" width="0.1524" layer="91"/>
+<wire x1="364.68" y1="10.08" x2="364.68" y2="10.09" width="0.1524" layer="91"/>
+<label x="364.68" y="10.06" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="1.8V" class="0">
@@ -2087,6 +2176,11 @@ Switches electronic signals</description>
 <wire x1="304.3" y1="6.36" x2="299.22" y2="6.36" width="0.1524" layer="91"/>
 <pinref part="SUPPLY17" gate="G$1" pin="1.8V"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$5"/>
+<wire x1="350" y1="5" x2="364.64" y2="5" width="0.1524" layer="91"/>
+<label x="364.6" y="5.06" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="VIN" class="0">
 <segment>
@@ -2114,6 +2208,12 @@ Switches electronic signals</description>
 <wire x1="314.46" y1="3.82" x2="314.46" y2="8.9" width="0.1524" layer="91"/>
 <pinref part="SUPPLY18" gate="G$1" pin="VIN"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$9"/>
+<wire x1="350" y1="-5.16" x2="364.7" y2="-5.16" width="0.1524" layer="91"/>
+<wire x1="364.7" y1="-5.16" x2="364.7" y2="-5.23" width="0.1524" layer="91"/>
+<label x="364.73" y="-5.21" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="!CS!_VIN4" class="0">
 <segment>
@@ -2124,6 +2224,12 @@ Switches electronic signals</description>
 <wire x1="314.46" y1="56.12" x2="317" y2="56.12" width="0.1524" layer="91"/>
 <junction x="314.46" y="56.12"/>
 <label x="317" y="56.12" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$11"/>
+<wire x1="350" y1="-10.24" x2="364.62" y2="-10.24" width="0.1524" layer="91"/>
+<wire x1="364.62" y1="-10.24" x2="364.62" y2="-10.23" width="0.1524" layer="91"/>
+<label x="364.63" y="-10.24" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="MISO_VIN" class="0">
@@ -2151,6 +2257,11 @@ Switches electronic signals</description>
 <pinref part="U6" gate="G$1" pin="AD0/SDO"/>
 <wire x1="263.66" y1="-3.8" x2="266.2" y2="-3.8" width="0.1524" layer="91"/>
 <label x="266.2" y="-3.8" size="1.27" layer="95" font="vector" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$2"/>
+<wire x1="350" y1="12.62" x2="364.77" y2="12.62" width="0.1524" layer="91"/>
+<label x="364.77" y="12.65" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -2187,6 +2298,12 @@ Switches electronic signals</description>
 <junction x="314.46" y="116.12"/>
 <label x="317" y="116.12" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$10"/>
+<wire x1="350" y1="-7.7" x2="364.66" y2="-7.7" width="0.1524" layer="91"/>
+<wire x1="364.66" y1="-7.7" x2="364.66" y2="-7.73" width="0.1524" layer="91"/>
+<label x="364.65" y="-7.78" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="N$4" class="0">
 <segment>
@@ -2205,6 +2322,12 @@ Switches electronic signals</description>
 <wire x1="454.46" y1="116.12" x2="457" y2="116.12" width="0.1524" layer="91"/>
 <junction x="454.46" y="116.12"/>
 <label x="457" y="116.12" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$6"/>
+<wire x1="350" y1="2.46" x2="364.52" y2="2.46" width="0.1524" layer="91"/>
+<wire x1="364.52" y1="2.46" x2="364.52" y2="2.39" width="0.1524" layer="91"/>
+<label x="364.48" y="2.57" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="!CS4" class="0">
@@ -2257,6 +2380,12 @@ Switches electronic signals</description>
 <junction x="454.46" y="56.12"/>
 <label x="457" y="56.12" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$7"/>
+<wire x1="350" y1="-0.08" x2="364.66" y2="-0.08" width="0.1524" layer="91"/>
+<wire x1="364.66" y1="-0.08" x2="364.66" y2="-0.14" width="0.1524" layer="91"/>
+<label x="364.66" y="-0.07" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="!CS2" class="0">
 <segment>
@@ -2291,6 +2420,11 @@ Switches electronic signals</description>
 <wire x1="314.46" y1="-8.88" x2="317" y2="-8.88" width="0.1524" layer="91"/>
 <junction x="314.46" y="-8.88"/>
 <label x="317" y="-8.88" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$1" gate="G$1" pin="P$8"/>
+<wire x1="350" y1="-2.62" x2="364.62" y2="-2.62" width="0.1524" layer="91"/>
+<label x="364.65" y="-2.65" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="!CS1" class="0">

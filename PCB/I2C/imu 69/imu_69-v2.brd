@@ -3,7 +3,7 @@
 <eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -1705,15 +1705,13 @@ for trimmer refence see : &lt;u&gt;www.electrospec-inc.com/cross_references/trim
 <wire x1="21.5" y1="3.35" x2="21.6" y2="3.45" width="0.127" layer="1"/>
 <wire x1="21.6" y1="3.45" x2="21.6" y2="2.5" width="0.127" layer="1"/>
 <via x="21.6" y="2.5" extent="1-16" drill="0.3"/>
-<via x="33.9" y="2.5" extent="1-16" drill="0.3"/>
-<wire x1="33.9" y1="2.5" x2="32.3" y2="2.5" width="0.127" layer="1"/>
 <via x="32.3" y="2.5" extent="1-16" drill="0.3"/>
 <wire x1="32.3" y1="1.8" x2="32.3" y2="2.5" width="0.127" layer="1"/>
 <wire x1="21.6" y1="2.5" x2="32.3" y2="2.5" width="0.127" layer="16"/>
 <wire x1="31.55" y1="1.6" x2="32.1" y2="1.6" width="0.127" layer="1"/>
 <wire x1="32.1" y1="1.6" x2="32.3" y2="1.8" width="0.127" layer="1"/>
 <contactref element="U$1" pad="P$3"/>
-<wire x1="33.9" y1="2.5" x2="38.5" y2="2.5" width="0.1524" layer="16"/>
+<wire x1="32.3" y1="2.5" x2="38.5" y2="2.5" width="0.1524" layer="16"/>
 </signal>
 <signal name="SCK/SCL">
 <contactref element="R3" pad="6"/>
