@@ -2577,17 +2577,6 @@ P0.10=NFC2</text>
 <vertex x="2.032" y="-0.762"/>
 </polygon>
 </symbol>
-<symbol name="DIODE">
-<wire x1="-1.27" y1="1.27" x2="-1.27" y2="-1.27" width="0.254" layer="94"/>
-<wire x1="-1.27" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="-1.27" y2="1.27" width="0.254" layer="94"/>
-<wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
-<wire x1="1.27" y1="0" x2="1.27" y2="-1.27" width="0.254" layer="94"/>
-<text x="0" y="2.54" size="1.27" layer="95" align="center">&gt;NAME</text>
-<text x="0" y="-2.5" size="1.27" layer="96" align="center">&gt;VALUE</text>
-<pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
-<pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="NRF52832_MODULE_MDBT42" prefix="U" uservalue="yes">
@@ -4105,300 +4094,6 @@ Vishay IHLP
 <connect gate="G$3" pin="2" pad="6"/>
 <connect gate="G$4" pin="1" pad="4"/>
 <connect gate="G$4" pin="2" pad="5"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="DIODE" prefix="D" uservalue="yes">
-<description>&lt;b&gt;Diode&lt;/b&gt;
-&lt;p&gt;
-&lt;h3&gt;SMA&lt;/h3&gt;
-&lt;table cellpadding="5" width="600"&gt;
-&lt;tr bgcolor="#DDDDDD"&gt;
-  &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Volts&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Amps&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Vf&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Ir&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Digikey #&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;SSA34-E3&lt;/td&gt;
-  &lt;td&gt;40V&lt;/td&gt;
-  &lt;td&gt;3A&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;480mV @ 3A&lt;/td&gt;
-  &lt;td&gt;200uA @ 40V&lt;/td&gt;
-  &lt;td&gt;SSA34-E3/61TGITR-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;CDBA120-G&lt;/td&gt;
-  &lt;td&gt;20V&lt;/td&gt;
-  &lt;td&gt;1A&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;500mV @ 1A&lt;/td&gt;
-  &lt;td&gt;500uA @ 20V&lt;/td&gt;
-  &lt;td&gt;641-1014-6-ND&lt;/td&gt;
-  &lt;td&gt;REEL&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;MBRA210&lt;/td&gt;
-  &lt;td&gt;10V&lt;/td&gt;
-  &lt;td&gt;2A&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;350mV @ 2A&lt;/td&gt;
-  &lt;td&gt;700uA @ 10V&lt;/td&gt;
-  &lt;td&gt;MBRA210LT3&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h3&gt;SOD-123&lt;/h3&gt;
-&lt;table cellpadding="5" width="600"&gt;
-&lt;tr bgcolor="#DDDDDD"&gt;
-  &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Volts&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Amps&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Vf&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Ir&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Order #&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;BAT54T1G&lt;/td&gt;
-  &lt;td&gt;30V&lt;/td&gt;
-  &lt;td&gt;200mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;800mV @ 200mA&lt;/td&gt;
-  &lt;td&gt;2uA @ 25V&lt;/td&gt;
-  &lt;td&gt;BAT54T1GOSTR-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;B0530W&lt;/td&gt;
-  &lt;td&gt;30V&lt;/td&gt;
-  &lt;td&gt;500mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;430mV @ 500mA&lt;/td&gt;
-  &lt;td&gt;130uA @ 30V&lt;/td&gt;
-  &lt;td&gt;B0530W-FDICT-ND&lt;/td&gt;
-  &lt;td&gt;REEL&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;MBR120&lt;/td&gt;
-  &lt;td&gt;20V&lt;/td&gt;
-  &lt;td&gt;1A&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;340mV @ 1A&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;MBR120VLSFT1GOSCT-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h3&gt;SOD-323&lt;/h3&gt;
-&lt;table cellpadding="5" width="600"&gt;
-&lt;tr bgcolor="#DDDDDD"&gt;
-  &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Volts&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Amps&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Vf&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Ir&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Order #&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;PMEG2005EJ&lt;/td&gt;
-  &lt;td&gt;20V&lt;/td&gt;
-  &lt;td&gt;500mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;355mV @ 500mA&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;568-4110-1-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;ZLLS410&lt;/td&gt;
-  &lt;td&gt;10V&lt;/td&gt;
-  &lt;td&gt;570mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;380mV @ 570mA&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;ZLLS410CT-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;1N4148WS&lt;/td&gt;
-  &lt;td&gt;75V&lt;/td&gt;
-  &lt;td&gt;150mA&lt;/td&gt;
-  &lt;td&gt;Silicon/Simple&lt;/td&gt;
-  &lt;td&gt;1V&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;1N4148WSFSCT-ND&lt;/td&gt;
-  &lt;td&gt;REEL&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h3&gt;SOD-523&lt;/h3&gt;
-&lt;table cellpadding="5" width="600"&gt;
-&lt;tr bgcolor="#DDDDDD"&gt;
-  &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Volts&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Amps&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Vf&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Ir&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Order #&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;BAT54XV2&lt;/td&gt;
-  &lt;td&gt;30V&lt;/td&gt;
-  &lt;td&gt;200mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;0.8V @ 100mA&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;BAT54XV2CT-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;TB751S&lt;/td&gt;
-  &lt;td&gt;30V&lt;/td&gt;
-  &lt;td&gt;30mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;RB751S-40TE61CT-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h3&gt;SOT23-R/W&lt;/h3&gt;(R = Solder Paste/Reflow Ovens, W = Hand-Soldering)
-&lt;br/&gt;
-&lt;table cellpadding="5" width="600"&gt;
-&lt;tr bgcolor="#DDDDDD"&gt;
-  &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Volts&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Amps&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Vf&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Ir&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Order #&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;BAT54FILM&lt;/td&gt;
-  &lt;td&gt;40V&lt;/td&gt;
-  &lt;td&gt;300mA&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-  &lt;td&gt;497-7162-1-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;POWERDI-5&lt;/h3&gt;
-&lt;br/&gt;
-&lt;table cellpadding="5" width="600"&gt;
-&lt;tr bgcolor="#DDDDDD"&gt;
-  &lt;td&gt;&lt;b&gt;Model&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Volts&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Amps&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Vf&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Ir&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Order #&lt;/b&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;b&gt;Notes&lt;/b&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-  &lt;td&gt;PDS560&lt;/td&gt;
-  &lt;td&gt;60V&lt;/td&gt;
-  &lt;td&gt;5A&lt;/td&gt;
-  &lt;td&gt;Schottky&lt;/td&gt;
-  &lt;td&gt;670mV @ 5A&lt;/td&gt;
-  &lt;td&gt;150uA @ 60V&lt;/td&gt;
-  &lt;td&gt;PDS560DICT-ND&lt;/td&gt;
-  &lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;/p&gt;</description>
-<gates>
-<gate name="G$1" symbol="DIODE" x="0" y="0"/>
-</gates>
-<devices>
-<device name="SMA" package="SMADIODE">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="DO-1N4148" package="DO-1N4148">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOT23_REFLOW" package="SOT23-R">
-<connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOD-523" package="SOD-523">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="K"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOD-323" package="SOD-323">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOD-123" package="SOD-123">
-<connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="C" pad="C"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="SOT23_WIDE" package="SOT23-WIDE">
-<connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="POWERDI" package="POWERDI-5">
-<connects>
-<connect gate="G$1" pin="A" pad="A1 A2"/>
-<connect gate="G$1" pin="C" pad="C"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -9863,10 +9558,6 @@ by exp-lbrs.ulp</description>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
 <part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
 <part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
-<part name="D4" library="microbuilder" deviceset="DIODE" device="SOD-323" value="1N4148"/>
-<part name="R7" library="microbuilder" deviceset="RESISTOR" device="_0603_NOOUT" value="10K"/>
-<part name="U$40" library="microbuilder" deviceset="3.3V" device=""/>
-<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0402" package3d_urn="urn:adsk.eagle:package:23626/2" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
@@ -9895,8 +9586,6 @@ and connect USB at the same time.</text>
 <text x="221.36" y="27.62" size="1.778" layer="91">G</text>
 <text x="226.44" y="20" size="1.778" layer="91">S</text>
 <text x="216.28" y="20" size="1.778" layer="91">D</text>
-<text x="142.1" y="79.06" size="1.27" layer="97">0.1uF+10K @ 3.3V =
-~1.2ms to 0.7VCC</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="-54.12" y="61.28" smashed="yes">
@@ -10257,21 +9946,6 @@ and connect USB at the same time.</text>
 <attribute name="NAME" x="36.424" y="74.481" size="1.778" layer="95"/>
 <attribute name="VALUE" x="36.424" y="69.401" size="1.778" layer="96"/>
 </instance>
-<instance part="D4" gate="G$1" x="175.12" y="76.52" smashed="yes" rot="R90">
-<attribute name="NAME" x="172.58" y="76.52" size="1.27" layer="95" rot="R90" align="center"/>
-<attribute name="VALUE" x="177.62" y="76.52" size="1.27" layer="96" rot="R90" align="center"/>
-</instance>
-<instance part="R7" gate="G$1" x="167.5" y="79.06" smashed="yes">
-<attribute name="NAME" x="167.5" y="81.6" size="1.27" layer="95" font="vector" align="center"/>
-<attribute name="VALUE" x="167.5" y="79.06" size="1.016" layer="96" font="vector" ratio="15" align="center"/>
-</instance>
-<instance part="U$40" gate="G$1" x="175.12" y="84.14" smashed="yes">
-<attribute name="VALUE" x="173.596" y="85.156" size="1.27" layer="96"/>
-</instance>
-<instance part="C12" gate="G$1" x="146.4" y="65.3" smashed="yes" rot="R90">
-<attribute name="NAME" x="146.019" y="66.824" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="151.099" y="66.824" size="1.778" layer="96" rot="R90"/>
-</instance>
 </instances>
 <busses>
 </busses>
@@ -10514,18 +10188,6 @@ and connect USB at the same time.</text>
 <label x="109.49" y="75.72" size="1.778" layer="95"/>
 <pinref part="SW1" gate="G$1" pin="P1"/>
 </segment>
-<segment>
-<label x="164.96" y="71.44" size="1.778" layer="95"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="162.42" y1="71.44" x2="175.12" y2="71.44" width="0.1524" layer="91"/>
-<wire x1="162.42" y1="79.06" x2="162.42" y2="71.44" width="0.1524" layer="91"/>
-<pinref part="D4" gate="G$1" pin="A"/>
-<wire x1="175.12" y1="71.44" x2="175.12" y2="73.98" width="0.1524" layer="91"/>
-<pinref part="C12" gate="G$1" pin="2"/>
-<wire x1="162.42" y1="79.06" x2="162.42" y2="65.3" width="0.1524" layer="91"/>
-<wire x1="162.42" y1="65.3" x2="151.48" y2="65.3" width="0.1524" layer="91"/>
-<junction x="162.42" y="79.06"/>
-</segment>
 </net>
 <net name="N$3" class="1">
 <segment>
@@ -10634,14 +10296,6 @@ and connect USB at the same time.</text>
 <wire x1="331" y1="79" x2="331" y2="82" width="0.1524" layer="91"/>
 <wire x1="321" y1="78.08" x2="331" y2="78.08" width="0.1524" layer="91"/>
 <wire x1="331" y1="78.08" x2="331" y2="79" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R7" gate="G$1" pin="2"/>
-<pinref part="U$40" gate="G$1" pin="3.3V"/>
-<wire x1="172.58" y1="79.06" x2="175.12" y2="79.06" width="0.1524" layer="91"/>
-<wire x1="175.12" y1="79.06" x2="175.12" y2="81.6" width="0.1524" layer="91"/>
-<pinref part="D4" gate="G$1" pin="C"/>
-<junction x="175.12" y="79.06"/>
 </segment>
 </net>
 <net name="A2/0.04" class="0">
@@ -10877,12 +10531,6 @@ and connect USB at the same time.</text>
 <pinref part="U8" gate="G$1" pin="DTR"/>
 <wire x1="73.45" y1="51.3" x2="77.71" y2="51.29" width="0.1524" layer="91"/>
 <label x="77.73" y="51.36" size="0.8128" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="C12" gate="G$1" pin="1"/>
-<wire x1="143.86" y1="65.3" x2="141.4" y2="65.3" width="0.1524" layer="91"/>
-<wire x1="141.4" y1="65.3" x2="141.4" y2="65.2" width="0.1524" layer="91"/>
-<label x="141.3" y="65.3" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="VBAT" class="1">
