@@ -10213,9 +10213,9 @@ and connect USB at the same time.</text>
 <attribute name="NAME" x="-18.476" y="119.481" size="1.778" layer="95"/>
 <attribute name="VALUE" x="-18.476" y="114.401" size="1.778" layer="96"/>
 </instance>
-<instance part="C13" gate="G$1" x="-88.5" y="169.3" smashed="yes">
-<attribute name="NAME" x="-86.976" y="169.681" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-86.976" y="164.601" size="1.778" layer="96"/>
+<instance part="C13" gate="G$1" x="-82.2" y="169.3" smashed="yes">
+<attribute name="NAME" x="-80.676" y="169.681" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-80.676" y="164.601" size="1.778" layer="96"/>
 </instance>
 <instance part="C16" gate="G$1" x="-85.9" y="32.9" smashed="yes">
 <attribute name="NAME" x="-84.376" y="33.281" size="1.778" layer="95"/>
@@ -10437,7 +10437,7 @@ and connect USB at the same time.</text>
 <wire x1="-74" y1="157.62" x2="-80.88" y2="157.62" width="0.1524" layer="91"/>
 <junction x="-80.88" y="157.62"/>
 <pinref part="C13" gate="G$1" pin="2"/>
-<wire x1="-88.5" y1="164.22" x2="-80.88" y2="164.22" width="0.1524" layer="91"/>
+<wire x1="-82.2" y1="164.22" x2="-80.88" y2="164.22" width="0.1524" layer="91"/>
 <wire x1="-80.88" y1="164.22" x2="-80.88" y2="157.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -10622,7 +10622,7 @@ and connect USB at the same time.</text>
 <wire x1="-68.18" y1="173" x2="-81" y2="173" width="0.1524" layer="91"/>
 <junction x="-68.18" y="172.86"/>
 <pinref part="C13" gate="G$1" pin="1"/>
-<wire x1="-88.5" y1="171.84" x2="-80.96" y2="171.84" width="0.1524" layer="91"/>
+<wire x1="-82.2" y1="171.84" x2="-80.96" y2="171.84" width="0.1524" layer="91"/>
 <wire x1="-80.96" y1="171.84" x2="-80.96" y2="177.4" width="0.1524" layer="91"/>
 <junction x="-80.96" y="177.4"/>
 </segment>
