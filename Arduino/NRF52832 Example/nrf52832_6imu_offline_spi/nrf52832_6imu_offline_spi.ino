@@ -93,7 +93,7 @@ void loop()
   update_imu(ICM20948_Sensor[2], 2);
   update_imu(ICM20948_Sensor[3], 3);
   update_imu(ICM20948_Sensor[4], 4);
-  delay(1);
+  delay(1000);
   Serial.print("diff: ");
   Serial.println(micros() - init_time);
 }

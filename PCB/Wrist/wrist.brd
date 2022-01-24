@@ -2443,9 +2443,6 @@ by exp-lbrs.ulp</description>
 <wire x1="18.8" y1="9.85" x2="18.8" y2="10.5055" width="0.254" layer="16"/>
 <via x="18.8" y="10.5055" extent="1-16" drill="0.4826"/>
 <via x="18.9" y="14.9" extent="1-16" drill="0.4826"/>
-<wire x1="19.7052125" y1="10.696" x2="19.854" y2="10.8447875" width="0.254" layer="1"/>
-<wire x1="18.8" y1="10.5055" x2="18.9905" y2="10.696" width="0.254" layer="1"/>
-<wire x1="18.9905" y1="10.696" x2="19.7052125" y2="10.696" width="0.254" layer="1"/>
 <wire x1="1" y1="13.15" x2="1" y2="13.0092125" width="0.254" layer="16"/>
 <wire x1="1" y1="13.0092125" x2="0.39539375" y2="12.40460625" width="0.254" layer="16"/>
 </signal>
@@ -2719,7 +2716,6 @@ by exp-lbrs.ulp</description>
 <wire x1="5.71" y1="19.46" x2="5.8" y2="19.55" width="0.254" layer="16"/>
 <contactref element="C10" pad="1"/>
 <wire x1="18.5" y1="7" x2="18.5" y2="6.05" width="0.254" layer="16"/>
-<wire x1="18.5" y1="6.05" x2="18.79" y2="6.05" width="0.254" layer="16"/>
 <wire x1="19.4052125" y1="7.3585" x2="18.8585" y2="7.3585" width="0.254" layer="16"/>
 <wire x1="18.8585" y1="7.3585" x2="18.5" y2="7" width="0.254" layer="16"/>
 <wire x1="19.4052125" y1="7.3585" x2="19.935" y2="7.8882875" width="0.254" layer="16"/>
@@ -2734,9 +2730,7 @@ by exp-lbrs.ulp</description>
 <wire x1="19.935" y1="7.8882875" x2="19.935" y2="13.765" width="0.254" layer="16"/>
 <contactref element="R7" pad="2"/>
 <contactref element="D4" pad="C"/>
-<wire x1="16.2876" y1="1.7" x2="16.6" y2="2.0124" width="0.254" layer="16"/>
 <wire x1="16.6" y1="2.0124" x2="16.6" y2="1.85" width="0.254" layer="16"/>
-<wire x1="16.2876" y1="1.7" x2="16.33488125" y2="1.7" width="0.254" layer="16"/>
 <wire x1="17.6890875" y1="0.34579375" x2="20.53139375" y2="0.34579375" width="0.254" layer="16"/>
 <wire x1="20.53139375" y1="0.34579375" x2="20.7825" y2="0.5969" width="0.254" layer="16"/>
 <via x="20.7825" y="0.5969" extent="1-16" drill="0.4826"/>
@@ -3556,6 +3550,7 @@ by exp-lbrs.ulp</description>
 <approved hash="19,1,7c5274c8b04ab3ce"/>
 <approved hash="19,16,1c88d77d97c41e61"/>
 <approved hash="19,16,a359a26bde39bf10"/>
+<approved hash="19,16,183818076c636c5c"/>
 </errors>
 </board>
 </drawing>
