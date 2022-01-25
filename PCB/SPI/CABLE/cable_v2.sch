@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -5547,27 +5547,27 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="147.32" y1="83.82" x2="147.32" y2="43.18" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="147.32" y1="43.18" x2="25.4" y2="43.18" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="25.4" y1="43.18" x2="25.4" y2="83.82" width="0.8128" layer="95" style="dashdot"/>
-<text x="78.74" y="86.36" size="5.08" layer="95">IMU#</text>
+<text x="78.74" y="86.36" size="5.08" layer="95">IMU#5</text>
 <wire x1="25.4" y1="25.4" x2="147.32" y2="25.4" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="147.32" y1="25.4" x2="147.32" y2="-15.24" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="147.32" y1="-15.24" x2="25.4" y2="-15.24" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="25.4" y1="-15.24" x2="25.4" y2="25.4" width="0.8128" layer="95" style="dashdot"/>
-<text x="78.74" y="27.94" size="5.08" layer="95">IMU#</text>
+<text x="78.74" y="27.94" size="5.08" layer="95">IMU#4</text>
 <wire x1="25.4" y1="-30.48" x2="147.32" y2="-30.48" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="147.32" y1="-30.48" x2="147.32" y2="-71.12" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="147.32" y1="-71.12" x2="25.4" y2="-71.12" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="25.4" y1="-71.12" x2="25.4" y2="-30.48" width="0.8128" layer="95" style="dashdot"/>
-<text x="78.74" y="-27.94" size="5.08" layer="95">IMU#</text>
+<text x="78.74" y="-27.94" size="5.08" layer="95">IMU#3</text>
 <wire x1="165.1" y1="83.82" x2="287.02" y2="83.82" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="287.02" y1="83.82" x2="287.02" y2="43.18" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="287.02" y1="43.18" x2="165.1" y2="43.18" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="165.1" y1="43.18" x2="165.1" y2="83.82" width="0.8128" layer="95" style="dashdot"/>
-<text x="218.44" y="86.36" size="5.08" layer="95">IMU#</text>
+<text x="218.44" y="86.36" size="5.08" layer="95">IMU#2</text>
 <wire x1="165.1" y1="25.4" x2="287.02" y2="25.4" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="287.02" y1="25.4" x2="287.02" y2="-15.24" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="287.02" y1="-15.24" x2="165.1" y2="-15.24" width="0.8128" layer="95" style="dashdot"/>
 <wire x1="165.1" y1="-15.24" x2="165.1" y2="25.4" width="0.8128" layer="95" style="dashdot"/>
-<text x="218.44" y="27.94" size="5.08" layer="95">IMU#</text>
+<text x="218.44" y="27.94" size="5.08" layer="95">IMU#1</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="68.58" y="66.04" smashed="yes">
