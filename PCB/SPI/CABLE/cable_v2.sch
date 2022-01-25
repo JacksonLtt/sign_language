@@ -6162,7 +6162,7 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="SUPPLY18" gate="G$1" pin="VIN"/>
 </segment>
 </net>
-<net name="!CS!_VIN1" class="0">
+<net name="!CS!_VIN3" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="134.62" y1="-55.88" x2="134.62" y2="-58.42" width="0.1524" layer="91"/>
@@ -6261,33 +6261,6 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="!CS4" class="0">
 <segment>
-<pinref part="U5" gate="G$1" pin="!CS"/>
-<label x="226.06" y="68.58" size="1.27" layer="95" font="vector" xref="yes"/>
-<wire x1="226.06" y1="68.58" x2="223.52" y2="68.58" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="Q5" gate="NMOS" pin="S"/>
-<wire x1="259.08" y1="55.88" x2="261.62" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="256.54" y1="55.88" x2="259.08" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="259.08" y1="58.42" x2="259.08" y2="55.88" width="0.1524" layer="91"/>
-<junction x="259.08" y="55.88"/>
-<label x="256.54" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="!CS!_VIN4" class="0">
-<segment>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="274.32" y1="58.42" x2="274.32" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="Q5" gate="NMOS" pin="D"/>
-<wire x1="271.78" y1="55.88" x2="274.32" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="274.32" y1="55.88" x2="276.86" y2="55.88" width="0.1524" layer="91"/>
-<junction x="274.32" y="55.88"/>
-<label x="276.86" y="55.88" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="!CS3" class="0">
-<segment>
 <pinref part="U3" gate="G$1" pin="!CS"/>
 <label x="86.36" y="10.16" size="1.27" layer="95" font="vector" xref="yes"/>
 <wire x1="86.36" y1="10.16" x2="83.82" y2="10.16" width="0.1524" layer="91"/>
@@ -6302,7 +6275,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="116.84" y="-2.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="!CS!_VIN3" class="0">
+<net name="!CS!_VIN4" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="134.62" y1="0" x2="134.62" y2="-2.54" width="0.1524" layer="91"/>
@@ -6314,6 +6287,49 @@ Source: AVX .. aphvc.pdf</description>
 </segment>
 </net>
 <net name="!CS2" class="0">
+<segment>
+<pinref part="U5" gate="G$1" pin="!CS"/>
+<label x="226.06" y="68.58" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="226.06" y1="68.58" x2="223.52" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="Q5" gate="NMOS" pin="S"/>
+<wire x1="259.08" y1="55.88" x2="261.62" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="256.54" y1="55.88" x2="259.08" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<wire x1="259.08" y1="58.42" x2="259.08" y2="55.88" width="0.1524" layer="91"/>
+<junction x="259.08" y="55.88"/>
+<label x="256.54" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="!CS!_VIN2" class="0">
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="274.32" y1="58.42" x2="274.32" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="Q5" gate="NMOS" pin="D"/>
+<wire x1="271.78" y1="55.88" x2="274.32" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="55.88" x2="276.86" y2="55.88" width="0.1524" layer="91"/>
+<junction x="274.32" y="55.88"/>
+<label x="276.86" y="55.88" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="!CS3" class="0">
+<segment>
+<pinref part="U4" gate="G$1" pin="!CS"/>
+<label x="86.36" y="-45.72" size="1.27" layer="95" font="vector" xref="yes"/>
+<wire x1="86.36" y1="-45.72" x2="83.82" y2="-45.72" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="Q4" gate="NMOS" pin="S"/>
+<wire x1="119.38" y1="-58.42" x2="121.92" y2="-58.42" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="-58.42" x2="119.38" y2="-58.42" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
+<wire x1="119.38" y1="-55.88" x2="119.38" y2="-58.42" width="0.1524" layer="91"/>
+<junction x="119.38" y="-58.42"/>
+<label x="116.84" y="-58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="!CS1" class="0">
 <segment>
 <pinref part="U6" gate="G$1" pin="!CS"/>
 <label x="226.06" y="10.16" size="1.27" layer="95" font="vector" xref="yes"/>
@@ -6329,7 +6345,7 @@ Source: AVX .. aphvc.pdf</description>
 <label x="256.54" y="-2.54" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="!CS!_VIN2" class="0">
+<net name="!CS!_VIN1" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="274.32" y1="0" x2="274.32" y2="-2.54" width="0.1524" layer="91"/>
@@ -6338,22 +6354,6 @@ Source: AVX .. aphvc.pdf</description>
 <wire x1="274.32" y1="-2.54" x2="276.86" y2="-2.54" width="0.1524" layer="91"/>
 <junction x="274.32" y="-2.54"/>
 <label x="276.86" y="-2.54" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="!CS1" class="0">
-<segment>
-<pinref part="U4" gate="G$1" pin="!CS"/>
-<label x="86.36" y="-45.72" size="1.27" layer="95" font="vector" xref="yes"/>
-<wire x1="86.36" y1="-45.72" x2="83.82" y2="-45.72" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="Q4" gate="NMOS" pin="S"/>
-<wire x1="119.38" y1="-58.42" x2="121.92" y2="-58.42" width="0.1524" layer="91"/>
-<wire x1="116.84" y1="-58.42" x2="119.38" y2="-58.42" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="119.38" y1="-55.88" x2="119.38" y2="-58.42" width="0.1524" layer="91"/>
-<junction x="119.38" y="-58.42"/>
-<label x="116.84" y="-58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
