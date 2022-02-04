@@ -12,10 +12,10 @@
 #include "ICM_20948.h" // Click here to get the library: http://librarymanager/All#SparkFun_ICM_20948_IMU
 #include <SPI.h>
 
-#define NUMBER_OF_SENSORS 5
+#define NUMBER_OF_SENSORS 6
 ICM_20948_SPI **ICM20948_Sensor; //Create pointer to a set of pointers to the sensor class
 String name_imu[6] = {"ICM_1", "ICM_2", "ICM_3", "ICM_4", "ICM_5", "ICM_6"};
-int CS_PIN[5] = {2, 3, 4, 5, 28};
+int CS_PIN[6] = {2, 3, 4, 5, 28, 29};
 
 
 #include <bluefruit.h> // BLE
@@ -55,6 +55,7 @@ void setup()
   init_icm(ICM20948_Sensor[2], 2);
   init_icm(ICM20948_Sensor[3], 3);
   init_icm(ICM20948_Sensor[4], 4);
+  init_icm(ICM20948_Sensor[5], 5);
 
 
   while ( !Serial ) delay(10);   // for nrf52840 with native usb
@@ -278,13 +279,13 @@ void loop()
     update_imu(ICM20948_Sensor[2], 2);
     update_imu(ICM20948_Sensor[3], 3);
     update_imu(ICM20948_Sensor[4], 4);
-    
+    update_imu(ICM20948_Sensor[5], 5);
 
     ALL_IMU[54] = send_time;
-    
+
     send_message();
     clear_all_imu();
-    
+
     COUNT += 1;
     Serial.println(COUNT);
   }
@@ -292,7 +293,7 @@ void loop()
   if (!Bluefruit.connected()) {
     COUNT = 0;
   }
-//  delay(1000);
+  //  delay(1000);
 }
 
 void print_all_imu() {
@@ -309,7 +310,7 @@ void send_message(void)
   int total_size = (packet_size + 1) * 4;
   byte byteArray[total_size];// 10+1
 
-  
+
   for (int i = 0; i < 55; i++) {
     byteArray[i * 4] = ((uint8_t*)&ALL_IMU[i])[0];
     byteArray[i * 4 + 1] = ((uint8_t*)&ALL_IMU[i])[1];
@@ -317,10 +318,10 @@ void send_message(void)
     byteArray[i * 4 + 3] = ((uint8_t*)&ALL_IMU[i])[3];
   }
 
-//  byteArray[packet_size * 4] = ((uint8_t*)&send_time)[0];
-//  byteArray[packet_size * 4 + 1] = ((uint8_t*)&send_time)[1];
-//  byteArray[packet_size * 4 + 2] = ((uint8_t*)&send_time)[2];
-//  byteArray[packet_size * 4 + 3] = ((uint8_t*)&send_time)[3];
+  //  byteArray[packet_size * 4] = ((uint8_t*)&send_time)[0];
+  //  byteArray[packet_size * 4 + 1] = ((uint8_t*)&send_time)[1];
+  //  byteArray[packet_size * 4 + 2] = ((uint8_t*)&send_time)[2];
+  //  byteArray[packet_size * 4 + 3] = ((uint8_t*)&send_time)[3];
 
 
 
