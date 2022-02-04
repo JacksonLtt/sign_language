@@ -12,10 +12,10 @@
 #include "ICM_20948.h" // Click here to get the library: http://librarymanager/All#SparkFun_ICM_20948_IMU
 #include <SPI.h>
 
-#define NUMBER_OF_SENSORS 5
+#define NUMBER_OF_SENSORS 6
 ICM_20948_SPI **ICM20948_Sensor; //Create pointer to a set of pointers to the sensor class
 String name_imu[6] = {"ICM_1", "ICM_2", "ICM_3", "ICM_4", "ICM_5", "ICM_6"};
-int CS_PIN[5] = {2, 3, 4, 5, 28};
+int CS_PIN[6] = {2, 3, 4, 5, 28, 29};
 
 
 void setup()
@@ -34,7 +34,7 @@ void setup()
   init_icm(ICM20948_Sensor[2], 2);
   init_icm(ICM20948_Sensor[3], 3);
   init_icm(ICM20948_Sensor[4], 4);
-
+  init_icm(ICM20948_Sensor[5], 5);
 }
 
 void init_icm(ICM_20948_SPI *sensor, int index) {
@@ -93,6 +93,7 @@ void loop()
   update_imu(ICM20948_Sensor[2], 2);
   update_imu(ICM20948_Sensor[3], 3);
   update_imu(ICM20948_Sensor[4], 4);
+  update_imu(ICM20948_Sensor[5], 5);
   delay(1000);
   Serial.print("diff: ");
   Serial.println(micros() - init_time);
