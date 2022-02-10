@@ -105,7 +105,7 @@ async def connect_to_device(address, loop):
             # print("Connected: {0}".format(x))
             await client.start_notify(UART_RX_UUID, callback)
             # await client.start_notify(UART_RX_UUID,  partial(my_notification_callback_with_client_input, client))
-            await asyncio.sleep(9)
+            await asyncio.sleep(1)
 
             await client.stop_notify(UART_RX_UUID)
             print("end")
@@ -129,8 +129,8 @@ if __name__ == "__main__":
     # addresses = [("50:02:91:A1:A7:5A", "right_hand")]
     # addresses = [("50:02:91:A1:A7:5A", "right_hand"), ("50:02:91:A1:AA:32", "left_hand")]
     addresses = [('9C211E49-F2B3-45CE-B691-9B13D58217C9',"right hand"),('E08FC2D4-E70E-42B0-A767-07A6F555736C','left hand')]
-    addresses = [("C8:B3:A4:26:46:8F","Feather nRF52832")]
-    addresses = [("22020732-46A7-4F91-B01D-8423CC584C1E","Feather nRF52832")]
+    addresses = [("E93C311A-B0A3-41C3-800C-4B5B541FC782","Feather nRF52832")]
+    # addresses = [("22020732-46A7-4F91-B01D-8423CC584C1E","Feather nRF52832")]
     # addresses = [("C6D42F37-B70E-4B0A-B56A-3821196AFE22", "Feather nRF52832")]
     # addresses = [('AC:67:B2:36:82:BE',"left hand")]
     # addresses = [("EF504132-F2ED-4D69-B0A5-731DCA06D098", "BatteryMonitor")]
