@@ -10353,7 +10353,7 @@ Used as a test point connection for pogo pins or other debugging tools.
 <part name="U$28" library="3M_Hole" deviceset="M3-HOLE_M0.9-HOLE" device="0.9MM"/>
 <part name="S2" library="SparkFun-Switches" deviceset="SWITCH-SPDT" device="-SMD-RIGHT-ANGLE"/>
 <part name="U$32" library="microbuilder" deviceset="GND" device=""/>
-<part name="TP1" library="SparkFun-Connectors" deviceset="TEST-POINT" device="3" value="1.8V"/>
+<part name="TP1" library="SparkFun-Connectors" deviceset="TEST-POINT" device="3" value=""/>
 <part name="C15" library="SparkFun_IMU_Breakout_ICM-20948" deviceset="SPARKFUN-CAPACITORS_0.1UF" device="-0402-16V-10%" value="10uF"/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY1" library="SparkFun_IMU_Breakout_ICM-20948" deviceset="SPARKFUN-POWERSYMBOLS_1.8V" device="" value="1.8V"/>
@@ -10371,6 +10371,7 @@ Used as a test point connection for pogo pins or other debugging tools.
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SUPPLY7" library="SparkFun_IMU_Breakout_ICM-20948" deviceset="SPARKFUN-POWERSYMBOLS_1.8V" device="" value="1.8V"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="TP2" library="SparkFun-Connectors" deviceset="TEST-POINT" device="3" value=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10788,6 +10789,10 @@ Usable ADC resolution - 12 bit setup: 4095 - 2634 = 1461</text>
 <instance part="GND1" gate="1" x="368.3" y="139.7" smashed="yes">
 <attribute name="VALUE" x="365.76" y="137.16" size="1.778" layer="96"/>
 </instance>
+<instance part="TP2" gate="G$1" x="93.98" y="83.82" smashed="yes">
+<attribute name="NAME" x="91.44" y="86.36" size="1.778" layer="95" font="vector"/>
+<attribute name="VALUE" x="91.44" y="81.28" size="1.778" layer="96" font="vector"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -10993,8 +10998,9 @@ Usable ADC resolution - 12 bit setup: 4095 - 2634 = 1461</text>
 <net name="RESET" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.21/RESET"/>
-<wire x1="78.74" y1="83.82" x2="91.44" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="78.74" y1="83.82" x2="93.98" y2="83.82" width="0.1524" layer="91"/>
 <label x="81.28" y="83.82" size="1.778" layer="95"/>
+<pinref part="TP2" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <label x="238.76" y="40.64" size="1.778" layer="95"/>
