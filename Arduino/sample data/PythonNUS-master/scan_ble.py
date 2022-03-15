@@ -11,6 +11,7 @@ async def scan_device():
 def find_device(name):
     list_name = asyncio.run(scan_device())
     for name in list_name:
+
         print(name)
     # print(list_name)
     return name in list_name
