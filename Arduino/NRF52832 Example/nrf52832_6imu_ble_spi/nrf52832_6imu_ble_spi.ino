@@ -293,7 +293,7 @@ void loop()
   if (!Bluefruit.connected()) {
     COUNT = 0;
   }
-  //  delay(1000);
+  delay(11);
 }
 
 void print_all_imu() {

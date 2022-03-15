@@ -108,7 +108,7 @@ async def connect_to_device(address, loop):
             # print("Connected: {0}".format(x))
             await client.start_notify(UART_RX_UUID, callback)
             # await client.start_notify(UART_RX_UUID,  partial(my_notification_callback_with_client_input, client))
-            await asyncio.sleep(10)
+            await asyncio.sleep(60)
 
             await client.stop_notify(UART_RX_UUID)
             print("end")
@@ -121,7 +121,7 @@ async def connect_to_device(address, loop):
 
 # f = open("C:/Users/txl5518/Documents/Github/sign_language/Arduino/sample data/PythonNUS-master/7.txt",'w',newline='')
 # f = open("C:/Users/Taiting/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/10.txt",'w',newline='')
-f = open("/Users/taitinglu/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/4.txt",'w',newline='')
+f = open("/Users/taitinglu/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/8.txt",'w',newline='')
 
 if __name__ == "__main__":
     # addresses = [("D8:A0:1D:5D:7E:FE", "right_hand")]
