@@ -6,15 +6,14 @@ from signTrans.Layers import EncoderLayer, DecoderLayer
 
 
 
-def get_pad_mask_txt(seq, pad_idx):
-    return (seq != pad_idx).unsqueeze(-2)
+# def get_pad_mask_txt(seq, pad_idx):
+#     return (seq != pad_idx).unsqueeze(-2)
 
 
-def get_pad_mask_img(seq, pad_dim):
-    
+def get_pad_mask_img(seq, pad_dim: int):
     # print(seq.shape)
     # TODO: make it more general
-    pad = torch.zeros(pad_dim).cuda()
+    pad = torch.zeros(pad_dim)
     out = (seq != pad)[..., 0].unsqueeze(-2)
     del pad
     return out
@@ -71,14 +70,14 @@ class Encoder(nn.Module):
             d_hidden,
             pad_idx,
             dropout=0.1,
-            n_position=200, 
+            n_position=200,
             scale_emb=False,
             src_is_text=True):
 
         super().__init__()
-        
+
         self.src_word_emb = nn.Embedding(n_src_vocab, d_word_vec, padding_idx=pad_idx)
-        
+
         if src_is_text == False:
             self.src_word_emb = nn.Sequential(
                                   nn.Linear(n_src_vocab,d_word_vec),
@@ -86,7 +85,7 @@ class Encoder(nn.Module):
                                   nn.LayerNorm(d_word_vec, eps=1e-6)
                                 )
 
-        
+
         self.position_enc = PositionalEncoding(d_word_vec, n_position=n_position)
         self.dropout = nn.Dropout(p=dropout)
         self.layer_stack = nn.ModuleList([
@@ -96,7 +95,45 @@ class Encoder(nn.Module):
         self.scale_emb = scale_emb
         self.d_model = d_model
 
-    def forward(self, src_seq, src_mask, return_attns=False):
+    # def forward(self, src_seq, src_mask, return_attns=False):
+    #
+    #     enc_slf_attn_list = []
+    #
+    #     # -- Forward
+    #     enc_output = self.src_word_emb(src_seq)
+    #     if self.scale_emb:
+    #         enc_output *= self.d_model ** 0.5
+    #     enc_output = self.dropout(self.position_enc(enc_output))
+    #     # enc_output = self.dropout(enc_output)
+    #     enc_output = self.layer_norm(enc_output)
+    #
+    #     for enc_layer in self.layer_stack:
+    #         enc_output, enc_slf_attn = enc_layer(enc_output, slf_attn_mask=src_mask)
+    #         enc_slf_attn_list += [enc_slf_attn] if return_attns else []
+    #
+    #     if return_attns:
+    #         return enc_output, enc_slf_attn_list
+    #     return enc_output,
+
+    # def forward(self, src_seq, src_mask):
+    #
+    #     # enc_slf_attn_list = []
+    #
+    #     # -- Forward
+    #     enc_output = self.src_word_emb(src_seq)
+    #     if self.scale_emb:
+    #         enc_output *= self.d_model ** 0.5
+    #     enc_output = self.dropout(self.position_enc(enc_output))
+    #     # enc_output = self.dropout(enc_output)
+    #     enc_output = self.layer_norm(enc_output)
+    #
+    #     for enc_layer in self.layer_stack:
+    #         enc_output, enc_slf_attn = enc_layer(enc_output, slf_attn_mask=src_mask)
+    #
+    #     return enc_output
+
+
+    def forward(self, src_seq, src_mask):
 
         enc_slf_attn_list = []
 
@@ -110,10 +147,10 @@ class Encoder(nn.Module):
 
         for enc_layer in self.layer_stack:
             enc_output, enc_slf_attn = enc_layer(enc_output, slf_attn_mask=src_mask)
-            enc_slf_attn_list += [enc_slf_attn] if return_attns else []
+            # enc_slf_attn_list += [enc_slf_attn] if return_attns else []
 
-        if return_attns:
-            return enc_output, enc_slf_attn_list
+        # if return_attns:
+        #     return enc_output, enc_slf_attn_list
         return enc_output,
 
 
@@ -138,7 +175,8 @@ class Transformer(nn.Module):
             trg_emb_prj_weight_sharing=True,
             emb_src_trg_weight_sharing=True,
             src_is_text=True,
-            scale_emb_or_prj='prj'):
+            scale_emb_or_prj='prj'
+    ):
 
         super().__init__()
         
@@ -159,7 +197,8 @@ class Transformer(nn.Module):
         assert scale_emb_or_prj in ['emb', 'prj', 'none']
         
         scale_emb = (scale_emb_or_prj == 'emb') if trg_emb_prj_weight_sharing else False
-        
+
+
         self.scale_prj = (scale_emb_or_prj == 'prj') if trg_emb_prj_weight_sharing else False
         
         self.d_model = d_model
@@ -235,34 +274,33 @@ class Transformer(nn.Module):
     #             # nn.ReLU(),
     #     )
 
-
-    def forward(self, 
-                src_seq, 
+    def forward(self,
+                src_seq,
                 trg_seq):
-    
-        if self.src_is_text:
-            src_mask = get_pad_mask_txt(src_seq, self.src_pad_idx)
-        else:
-            src_mask = get_pad_mask_img(src_seq, src_seq.size(-1))
-                
-        # trg_mask = get_pad_mask_txt(trg_seq, self.trg_pad_idx) & get_subsequent_mask(trg_seq)
+        # print("src:",self.src_is_text)
+        # if self.src_is_text:
+        #
+        #     src_mask = get_pad_mask_txt(src_seq, self.src_pad_idx)
+        # else:
+        src_mask = get_pad_mask_img(src_seq, src_seq.size(-1))
 
+        # trg_mask = get_pad_mask_txt(trg_seq, self.trg_pad_idx) & get_subsequent_mask(trg_seq)
+        # print("src_seq:", src_seq)
+        # print("src_mask:",type(src_mask))
         enc_output, *_ = self.encoder(src_seq, src_mask)
-        
+
         # dec_output, *_ = self.decoder(trg_seq, trg_mask, enc_output, src_mask)
-        
+
         # seq_logit = self.trg_word_prj(dec_output)
-        
+
         # if self.scale_prj:
         #     seq_logit *= self.d_model ** -0.5
 
         # print(enc_output.shape)
 
         out = self.last_prj(enc_output)
-            
-        return out
-        # return seq_logit.view(-1, seq_logit.size(2))
 
+        return out
 
 
 
