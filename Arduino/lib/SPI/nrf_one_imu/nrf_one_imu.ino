@@ -11,7 +11,7 @@
  ***************************************************************/
 #include "ICM_20948.h" // Click here to get the library: http://librarymanager/All#SparkFun_ICM_20948_IMU
 
-#define CS_PIN 27     // Which pin you connect CS to. Used only when "USE_SPI" is defined
+#define CS_PIN 2     // Which pin you connect CS to. Used only when "USE_SPI" is defined
 
 ICM_20948_SPI myICM; // If using SPI create an ICM_20948_SPI object
 
@@ -21,7 +21,7 @@ void setup()
 
   Serial.begin(115200);
   SPI.begin();
-  SPI.beginTransaction(SPISettings(7000000, MSBFIRST, SPI_MODE0));
+//  SPI.beginTransaction(SPISettings(7000000, MSBFIRST, SPI_MODE0));
 
 
 
@@ -55,7 +55,7 @@ void loop()
   {
     myICM.getAGMT();         // The values are only updated when you call 'getAGMT'
     //    printRawAGMT( myICM.agmt );     // Uncomment this to see the raw values, taken directly from the agmt structure
-    //    printScaledAGMT(&myICM); // This function takes into account the scale settings from when the measurement was made to calculate the values with units
+    printScaledAGMT(&myICM); // This function takes into account the scale settings from when the measurement was made to calculate the values with units
     delay(1);
   }
   else
