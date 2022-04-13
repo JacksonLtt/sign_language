@@ -9,7 +9,7 @@
 Adafruit_ICM20948 icm;
 uint16_t measurement_delay_us = 65535; // Delay between measurements for testing
 // For SPI mode, we need a CS pin
-#define ICM_CS 4
+#define ICM_CS 18
 // For software-SPI mode we need SCK/MOSI/MISO pins
 #define ICM_SCK 14
 #define ICM_MISO 15
