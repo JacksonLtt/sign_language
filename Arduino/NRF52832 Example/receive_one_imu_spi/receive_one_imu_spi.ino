@@ -1,6 +1,6 @@
-/* 
+/*
   8/27/2021 get one IMU together by 1 SPI
-*/ 
+*/
 #include <Adafruit_ICM20X.h>
 #include <Adafruit_ICM20948.h>
 #include <Adafruit_Sensor.h>
@@ -11,9 +11,9 @@ uint16_t measurement_delay_us = 65535; // Delay between measurements for testing
 // For SPI mode, we need a CS pin
 #define ICM_CS 2
 // For software-SPI mode we need SCK/MOSI/MISO pins
-#define ICM_SCK 13
-#define ICM_MISO 12
-#define ICM_MOSI 11
+#define ICM_SCK 14
+#define ICM_MISO 15
+#define ICM_MOSI 13
 
 void setup(void) {
   Serial.begin(115200);
@@ -23,9 +23,9 @@ void setup(void) {
   Serial.println("Adafruit ICM20948 test!");
 
   // Try to initialize!
-//  if (!icm.begin_I2C()) {
-     if (!icm.begin_SPI(ICM_CS)) {
-//  if (!icm.begin_SPI(ICM_CS, ICM_SCK, ICM_MISO, ICM_MOSI)) {
+  //  if (!icm.begin_I2C()) {
+  if (!icm.begin_SPI(ICM_CS)) {
+    //  if (!icm.begin_SPI(ICM_CS, ICM_SCK, ICM_MISO, ICM_MOSI)) {
 
     Serial.println("Failed to find ICM20948 chip");
     while (1) {

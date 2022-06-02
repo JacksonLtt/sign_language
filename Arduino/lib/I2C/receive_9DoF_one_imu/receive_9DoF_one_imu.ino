@@ -19,7 +19,7 @@ void setup(void) {
   Serial.println("Adafruit ICM20948 test!");
 
   // Try to initialize!
-  uint8_t new_addr = 0x68;
+  uint8_t new_addr = 0x69;
   if (!icm.begin_I2C(new_addr)) {
 
     Serial.println("Failed to find ICM20948 chip");
