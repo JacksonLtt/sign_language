@@ -11,7 +11,7 @@
  ***************************************************************/
 #include "ICM_20948.h" // Click here to get the library: http://librarymanager/All#SparkFun_ICM_20948_IMU
 
-#define CS_PIN 27     // Which pin you connect CS to. Used only when "USE_SPI" is defined
+#define CS_PIN 2     // Which pin you connect CS to. Used only when "USE_SPI" is defined
 
 ICM_20948_SPI myICM; // If using SPI create an ICM_20948_SPI object
 
@@ -25,7 +25,7 @@ void setup()
 
 
 
-  //myICM.enableDebugging(); // Uncomment this line to enable helpful debug messages on Serial
+  myICM.enableDebugging(); // Uncomment this line to enable helpful debug messages on Serial
 
   bool initialized = false;
   while (!initialized)
