@@ -25,7 +25,7 @@ void setup()
 
 
 
-  //myICM.enableDebugging(); // Uncomment this line to enable helpful debug messages on Serial
+  myICM.enableDebugging(); // Uncomment this line to enable helpful debug messages on Serial
 
   bool initialized = false;
   while (!initialized)

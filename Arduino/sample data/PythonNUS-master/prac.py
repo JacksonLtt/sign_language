@@ -71,20 +71,20 @@ def callback(sender, data):
     #     f.write(str(result[:-1]) + "\n")
     #     count_right += 1
 
-def my_notification_callback_with_client_input(client: BleakClient, sender: int, data: bytearray):
-    """Notification callback with client awareness"""
-    print(client.address,":",data)
-    result = struct.unpack('l', data + bytes([0, 0, 0]))[0]
-
-    global count_left
-    global count_right
-    if result == 0:
-        print(sender, ": left count: ", count_left, "result", result)
-        count_left += 1
-
-    if result == 1:
-        print(sender, ": right count: ", count_right, "result", result)
-        count_right += 1
+# def my_notification_callback_with_client_input(client: BleakClient, sender: int, data: bytearray):
+#     """Notification callback with client awareness"""
+#     print(client.address,":",data)
+#     result = struct.unpack('l', data + bytes([0, 0, 0]))[0]
+#
+#     global count_left
+#     global count_right
+#     if result == 0:
+#         print(sender, ": left count: ", count_left, "result", result)
+#         count_left += 1
+#
+#     if result == 1:
+#         print(sender, ": right count: ", count_right, "result", result)
+#         count_right += 1
 
 def disconnect_callback(client):
     print("Client with address {} got disconnected!".format(client.address))
@@ -108,7 +108,7 @@ async def connect_to_device(address, loop):
             # print("Connected: {0}".format(x))
             await client.start_notify(UART_RX_UUID, callback)
             # await client.start_notify(UART_RX_UUID,  partial(my_notification_callback_with_client_input, client))
-            await asyncio.sleep(40)
+            await asyncio.sleep(5)
 
             await client.stop_notify(UART_RX_UUID)
             print("end")
@@ -133,13 +133,13 @@ if __name__ == "__main__":
     # addresses = [("50:02:91:A1:AA:32","left_hand")]
     # addresses = [("50:02:91:A1:A7:5A", "right_hand")]
     # addresses = [("50:02:91:A1:A7:5A", "right_hand"), ("50:02:91:A1:AA:32", "left_hand")]
-    addresses = [('9C211E49-F2B3-45CE-B691-9B13D58217C9',"right hand"),('E08FC2D4-E70E-42B0-A767-07A6F555736C','left hand')]
-    addresses = [("E93C311A-B0A3-41C3-800C-4B5B541FC782","Feather nRF52832")]
-    addresses = [("22020732-46A7-4F91-B01D-8423CC584C1E","Feather nRF52832")]
-    addresses = [("C8:B3:A4:26:46:8F", "nRF52832 Button")]
-    addresses = [("F45E7C56-20A1-487C-AA49-9137616CFF97", "nRF52832 Button")]
+    # addresses = [('9C211E49-F2B3-45CE-B691-9B13D58217C9',"right hand"),('E08FC2D4-E70E-42B0-A767-07A6F555736C','left hand')]
+    addresses = [("B29534B7-27F8-46FC-BF0C-151BACC9E342","Feather nRF52832")]
+    # addresses = [("22020732-46A7-4F91-B01D-8423CC584C1E","Feather nRF52832")]
+    # addresses = [("49418730-AA81-41BE-A75C-6ACFA648A3E4", "nRF52832 Button")]
+    # addresses = [("EBC0DE90-60B6-489C-9A64-EC814F3007DF", "Ring_#1")]
     # addresses = [('AC:67:B2:36:82:BE',"left hand")]
-    # addresses = [("EF504132-F2ED-4D69-B0A5-731DCA06D098", "BatteryMonitor")]
+    addresses = [("4F5D21D7-B445-4CC5-8DFD-AD097F93FB57", "Ring_#3")]
 
 
     run_connect(addresses)
