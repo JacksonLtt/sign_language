@@ -78,6 +78,7 @@ void setup()
   Bluefruit.Periph.setConnectCallback(connect_callback);
   Bluefruit.Periph.setDisconnectCallback(disconnect_callback);
   Bluefruit.Periph.setConnInterval(6, 12); // 7.5 - 15 ms
+  Bluefruit.setName("Wrist_#2");
 
   // Configure and Start Device Information Service
   bledis.setManufacturer("Adafruit Industries");
@@ -213,27 +214,19 @@ void init_icm(ICM_20948_SPI *sensor, int index) {
 
 void update_to_all_imu(ICM_20948_SPI *sensor, int index) {
 
-  //  float accx = sensor->accX() * 0.01;
-  //  float accy = sensor->accY() * 0.01;
-  //  float accz = sensor->accZ() * 0.01;
-  //  float gyrox = sensor->gyrX();
-  //  float gyroy = sensor->gyrY();
-  //  float gyroz = sensor->gyrZ();
-  //  float magx = sensor->magX();
-  //  float magy = sensor->magY();
-  //  float magz = sensor->magZ();
-
   ALL_IMU[index * 9] = sensor->accX() * 0.01;
   ALL_IMU[index * 9 + 1] = sensor->accY() * 0.01;
   ALL_IMU[index * 9 + 2] = sensor->accZ() * 0.01;
 
-  ALL_IMU[index * 9 + 3] = sensor->gyrX();
-  ALL_IMU[index * 9 + 4] = sensor->gyrY();
-  ALL_IMU[index * 9 + 5] = sensor->gyrZ();
+  ALL_IMU[index * 9 + 3] = sensor->magX();
+  ALL_IMU[index * 9 + 4] = sensor->magY();
+  ALL_IMU[index * 9 + 5] = sensor->magZ();
 
-  ALL_IMU[index * 9 + 6] = sensor->magX();
-  ALL_IMU[index * 9 + 7] = sensor->magY();
-  ALL_IMU[index * 9 + 8] = sensor->magZ();
+
+  ALL_IMU[index * 9 + 6] = sensor->gyrX();
+  ALL_IMU[index * 9 + 7] = sensor->gyrY();
+  ALL_IMU[index * 9 + 8] = sensor->gyrZ();
+  
 }
 
 void update_imu(ICM_20948_SPI *sensor, int index) {

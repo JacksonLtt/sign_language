@@ -7,7 +7,7 @@ count_left = 0
 count_right = 0
 
 UART_TX_UUID = "6e400002-b5a3-f393-e0a9-e50e24dcca9e" #Nordic NUS characteristic for TX
-UART_RX_UUID = "6e400003-b5a3-f393-e0a9-e50e24dcca9e" #Nordic NUS characteristic for RX
+UART_RX_UUID = "0x2A00" #Nordic NUS characteristic for RX
 # UART_RX_UUID = "1234"
 
 MODEL_NBR_UUID = "00002a24-0000-1000-8000-00805f9b34fb"
@@ -56,7 +56,7 @@ def callback(sender, data):
     # print("size: ",len(data.decode())+1,"decoder: ",data.decode())
     result = decode_byte_data(data)
     print(len(result),":",count_right,":",result)
-    f.write(str(result) + "\n")
+    f.write(str(result)[1:-1] + "\n")
 
 
     # global f
@@ -108,7 +108,7 @@ async def connect_to_device(address, loop):
             # print("Connected: {0}".format(x))
             await client.start_notify(UART_RX_UUID, callback)
             # await client.start_notify(UART_RX_UUID,  partial(my_notification_callback_with_client_input, client))
-            await asyncio.sleep(5)
+            await asyncio.sleep(60)
 
             await client.stop_notify(UART_RX_UUID)
             print("end")
@@ -123,7 +123,7 @@ async def connect_to_device(address, loop):
 # f = open("C:/Users/Taiting/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/10.txt",'w',newline='')
 # f = open("/Users/taitinglu/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/4.txt",'w',newline='')
 # f = open("C:/Users/Taiting/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/10.txt",'w',newline='')
-f = open("/Users/taitinglu/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/4.txt",'w',newline='')
+f = open("/Users/taitinglu/Documents/GitHub/sign_language/Arduino/sample data/PythonNUS-master/ppg_2.txt",'w',newline='')
 
 if __name__ == "__main__":
     # addresses = [("D8:A0:1D:5D:7E:FE", "right_hand")]
@@ -137,9 +137,10 @@ if __name__ == "__main__":
     addresses = [("B29534B7-27F8-46FC-BF0C-151BACC9E342","Feather nRF52832")]
     # addresses = [("22020732-46A7-4F91-B01D-8423CC584C1E","Feather nRF52832")]
     # addresses = [("49418730-AA81-41BE-A75C-6ACFA648A3E4", "nRF52832 Button")]
-    # addresses = [("EBC0DE90-60B6-489C-9A64-EC814F3007DF", "Ring_#1")]
+    # addresses = [("EBC0DE90-60B6-489C
+    # -9A64-EC814F3007DF", "Ring_#1")]
     # addresses = [('AC:67:B2:36:82:BE',"left hand")]
-    addresses = [("4F5D21D7-B445-4CC5-8DFD-AD097F93FB57", "Ring_#3")]
+    addresses = [("C755DCD4-C5A8-4D4C-8642-71F57A3A6358", "eSense-0234")]
 
 
     run_connect(addresses)
